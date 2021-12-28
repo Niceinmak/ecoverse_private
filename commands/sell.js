@@ -5,7 +5,7 @@ exports.execute = async (client, message, args) => {
   let item = args[0];
   let quantity=0;
   let randomcash = Math.floor(Math.random() * 200);
-  
+  let itemname=0
   //------------------------------------------
     const x = client.db.get(`items_${message.author.id}`);
   const arrayToObject = x.reduce((itemStruct, x) => {
@@ -15,9 +15,9 @@ exports.execute = async (client, message, args) => {
    client.db.delete(`items_${message.author.id}`)
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
    const resultyazı = Object.keys(arrayToObject).map(k =>
-     if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200)
+     itemname=k
   );
-  
+  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200)
   const result = Object.keys(arrayToObject).map(k =>
      message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*100}**💶 kazandın.`)
   );
