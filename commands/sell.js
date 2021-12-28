@@ -35,10 +35,13 @@ exports.execute = async (client, message, args) => {
     const  result4 = Object.keys(arrayToObject).find(k =>
     itemname+=" "+k
   );
- let count2= itemname(args[0]) // Responds "This"
- let count3= itemname(args[1]) // Responds "is"
+  let argString = itemname.substr( itemname.indexOf(' ') + 1 );
+  let argArr = argString.split(' ');
+  let agr1=argArr[0]
+  let agr2=argArr[1]
+  let [uid, newNickname] = argArr;
     const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname}${count2}${count3}*`)
+     message.channel.send(`**${k} Kasasını Sattın ve ${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname},,,${agr1},,,${agr2}**`)
   );
 };
 
