@@ -55,7 +55,7 @@ exports.execute = async (client, message, args) => {
            {
             if(amount4=="2")
                {
-                    let data2= client.eco.addMoney(message.author.id, parseInt(kullaniciveri*3));
+                    let data2= client.eco.addMoney(message.author.id, parseInt(kullaniciveri*10));
                  embed.setDescription(`**🟢 |Gelme Şansı 42,5 , Kazanç:3X\n🔴 |Gelme Şansı 42,5 , Kazanç:3X\n🔷 |Gelme Şansı 15,0 , Kazanç:10X  \n------------------------------------------\n Çark Döndürülüyor...\n Tebrikler, Kazandın!\n Rulet:🔷\n Senin Oynadığın:${kullaniciveri2}**`)
                return msg.edit(embed)
                }
