@@ -13,7 +13,7 @@ exports.execute = async (client, message, args) => {
     return itemStruct;
   }, {});
    client.db.delete(`items_${message.author.id}`)
-  //if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
+//  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
   const result = Object.keys(arrayToObject).map(k =>
       message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*100}**💶 kazandın.`)
   );
@@ -21,8 +21,12 @@ exports.execute = async (client, message, args) => {
   
      quantity=arrayToObject[k]*100
   );
-  let sell = client.eco.addMoney(message.author.id, quantity);
-   
+      const result3 = Object.keys(arrayToObject).map(k =>
+  
+     quantity=quantity+(arrayToObject[k]*100)
+  );
+  
+   let sell = client.eco.addMoney(message.author.id, quantity);
 };
 
 exports.help = {
