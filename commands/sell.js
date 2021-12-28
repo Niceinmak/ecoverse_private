@@ -26,7 +26,7 @@ exports.execute = async (client, message, args) => {
  // let argString = itemname.substr( itemname.indexOf(' ') + 1 );
   let agr1=argString[0]
   let agr2=argString[1]
-  let agr3=argString[1]
+  let agr3=argString[2]
  // let [uid, newNickname] = argArr;
   if(agr1!="undefined")
     {
@@ -82,7 +82,7 @@ exports.execute = async (client, message, args) => {
   );
      let sell = client.eco.addMoney(message.author.id, quantity*randomcash);
     const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın ve ${randomcash},${arrayToObject[k]*randomcash}💶 kazandın.${quantity}$,${count1},${itemname},,,${agr1},,,${agr2}${agr23**`)
+     message.channel.send(`**${k} Kasasını Sattın ve ${randomcash},${quantity*randomcash}💶 kazandın.${quantity}$,${count1},${itemname},,,${agr1},,,${agr2},,,${agr3}**`)
   );
 };
 
