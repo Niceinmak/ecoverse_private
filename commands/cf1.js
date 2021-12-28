@@ -11,6 +11,7 @@ exports.execute = async (client, message, args) => {
     if (playtime.onCooldown) return message.reply(`**Biraz yavaş ol,${playtime.time.seconds} saniye daha bekle.**`);
         if (amount3=="yazı" || amount3=="tura")
  {
+    if (!amount5 || isNaN(amount5)) return message.channel.send(`** ⛔${message.author.tag} | ** Lütfen Sayı Giriniz`);
     if(amount5>authordata.amount || amount5<1)  return message.channel.send(`** ⛔${message.author.tag} | ** Girdiğiniz miktar paranızdan fazla veya 1'den az olamaz`);
     else
     {
@@ -70,7 +71,7 @@ exports.execute = async (client, message, args) => {
     }};
 
 exports.help = {
-    name: "cf",
+    name: "cf1",
     aliases: ["coinflip","yazıtura"],
-    usage: "cf <yazı,tura> <miktar>"
+    usage: "cf1 <yazı,tura> <miktar>"
 }
