@@ -23,7 +23,7 @@ exports.execute = async (client, message, args) => {
     prize: hasItem.cost
   };
 
-  client.db.set(`items_${message.author.id}`, itemStruct);
+  client.db.get(`items_${message.author.id}`, itemStruct);
   return message.channel.send(
     `You purchased **${item}** for **:dollar: ${hasItem.cost}**.`
   );
