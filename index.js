@@ -7,14 +7,14 @@ client.config = require("./botConfig");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.shop = {
-  "Laptop" : {
-    cost: 2000
+  "Kase" : {
+    cost: 100
   },
   "Mobile" : {
-    cost: 1000
+    cost: 100
   },
   "PC" : {
-    cost: 3000
+    cost: 100
   }
 };
 const fs = require("fs");
