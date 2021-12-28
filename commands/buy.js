@@ -15,8 +15,7 @@ exports.execute = async (client, message, args) => {
   let isBalanceEnough = userBalance.amount >= hasItem.cost*count;
   if (!isBalanceEnough)
     {
-    return message.reply(
-      "**Bu eşyayı alabilmek için **" +"**${hasItem.cost*count}**" +"** 💶 ihtiyacın var.**");
+    return message.reply(`**Bu eşyayı alabilmek için ${hasItem.cost*count}💶 ihtiyacın var.**`);
     }
   let buy = client.eco.removeMoney(message.author.id, hasItem.cost);
   let itemStruct = {
