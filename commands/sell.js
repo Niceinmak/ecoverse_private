@@ -17,7 +17,7 @@ exports.execute = async (client, message, args) => {
    client.db.delete(`items_${message.author.id}`)
   const result = Object.keys(arrayToObject).map(k =>
   
-      message.channel.send(`**${arrayToObject} Kasasını Sattın** ve **${arrayToObject[k]*randomcash}**💶 kazandın.`)
+      message.channel.send(`**${arrayToObject} Kasasını Sattın** ve **${randomcash}** **${arrayToObject[k]*randomcash}**💶 kazandın.`)
   );
     const result2 = Object.keys(arrayToObject).map(k =>
   
