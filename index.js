@@ -7,13 +7,13 @@ client.config = require("./botConfig");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.shop = {
-  "Yaygın.kasa" : {
+  "yaygın.kasa" : {
     cost: 100
   },
-  "Nadir.kasa" : {
+  "nadir.kasa" : {
     cost: 1000
   },
-  "Epik.kasa" : {
+  "epik.kasa" : {
     cost: 10000
   }
 };

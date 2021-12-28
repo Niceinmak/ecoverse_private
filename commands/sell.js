@@ -14,20 +14,22 @@ exports.execute = async (client, message, args) => {
   }, {});
    client.db.delete(`items_${message.author.id}`)
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
-   const resultyazı = Object.keys(arrayToObject).map(k =>
+   const resultcases = Object.keys(arrayToObject).map(k =>
      itemname=k
   );
-  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200)
+  if(itemname=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200)
+  if(itemname=="nadir.kasa") randomcash = Math.floor(Math.random() * 2000)
+  if(itemname=="epik.kasa") randomcash = Math.floor(Math.random() * 20000)
   const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*100}**💶 kazandın.`)
+     message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*randomcash}**💶 kazandın.`)
   );
     const result2 = Object.keys(arrayToObject).map(k =>
   
-     quantity=arrayToObject[k]*100
+     quantity=arrayToObject[k]*randomcash
   );
       const result3 = Object.keys(arrayToObject).map(k =>
   
-     quantity=quantity+(arrayToObject[k]*100)
+     quantity=quantity+(arrayToObject[k]*randomcash)
   );
   
    let sell = client.eco.addMoney(message.author.id, quantity);
