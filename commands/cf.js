@@ -6,6 +6,8 @@ exports.execute = async (client, message, args) => {
     let amount5 = args[1]
     let yazitura= ""
     let authordata = client.eco.fetchMoney(message.author.id) 
+        let cftime = client.eco.beg(client.ecoAddUser, 10, { canLose: true });
+    if (cftime.onCooldown) return message.reply(`Biraz yavaş ol,${cftime.time.seconds} saniye daha bekle.`);
         if (amount3=="yazı" || amount3=="tura")
  {
     if(amount5>authordata.amount || amount5<1)  return message.channel.send(`** ⛔${message.author.tag} | ** Girdiğiniz miktar paranızdan fazla veya 1'den az olamaz`);
