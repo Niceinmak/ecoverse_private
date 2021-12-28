@@ -6,9 +6,9 @@ exports.execute = async (client, message, args) => {
     let amount5 = args[1]
     let yazitura= ""
     let authordata = client.eco.fetchMoney(message.author.id) 
-    let amount6 = Math.floor(Math.random() * 1) + 10;
-        let cftime = client.eco.beg(client.ecoAddUser, amount6, { canLose: false });
-    if (cftime.onCooldown) return message.reply(`Biraz yavaş ol,${cftime.time.seconds} saniye daha bekle.`);
+    let timecooldown = Math.floor(Math.random() * 200)+50;
+        let playtime = await client.eco.beg(client.ecoAddUser, timecooldown,{ canLose: true, cooldown: 5000, customName: "search" });
+    if (playtime.onCooldown) return message.reply(`**Biraz yavaş ol,${playtime.time.seconds} saniye daha bekle.**`);
         if (amount3=="yazı" || amount3=="tura")
  {
     if(amount5>authordata.amount || amount5<1)  return message.channel.send(`** ⛔${message.author.tag} | ** Girdiğiniz miktar paranızdan fazla veya 1'den az olamaz`);
