@@ -22,9 +22,7 @@ exports.execute = async (client, message, args) => {
     name: item.toLowerCase(),
     prize: hasItem.cost
   };
-// client.db.add(`items_${message.author.id+itemStruct}`,itemStruct)
-  client.db.add(`items_${message.author.id-itemStruct}`, 1)
-// client.db.push(`items_${message.author.id}`, itemStruct);
+ client.db.push(`items_${message.author.id}`, itemStruct);
   return message.channel.send(
     `You purchased **${item}** for **:dollar: ${hasItem.cost}**.`
   );
