@@ -49,13 +49,13 @@ exports.execute = async (client, message, args) => {
           else if(amountfinish<amount3)
         {
           embed.setColor("RED")
-          let data2= client.eco.removeMoney(client.ecoAddUser, parseInt(amount3));
+          let data2= client.eco.removeMoney(message.author.id, parseInt(amount3));
           embed.setFooter(`${azcok} 𝙆𝙖𝙯𝙖𝙣ı𝙧, Rakip Kazandı :(`)
         }
       else
         {
           embed.setColor("GREEN")
-          let data2= client.eco.addMoney(client.ecoAddUser, parseInt(amount3));
+          let data2= client.eco.addMoney(message.author.id, parseInt(amount3));
           embed.setFooter(`${azcok} 𝙆𝙖𝙯𝙖𝙣ı𝙧, Tebrikler ,Kazandın!`)
         }
     
@@ -80,13 +80,13 @@ exports.execute = async (client, message, args) => {
           else if(amountfinish>amount3)
         {
           embed.setColor("RED")
-          let data2= client.eco.removeMoney(client.ecoAddUser, parseInt(amount3));
+          let data2= client.eco.removeMoney(message.author.id, parseInt(amount3));
           embed.setFooter(`${azcok} 𝙆𝙖𝙯𝙖𝙣ı𝙧, Rakip Kazandı :(`)
         }
       else
         {
           embed.setColor("GREEN")
-          let data2= client.eco.addMoney(client.ecoAddUser, parseInt(amount3));
+          let data2= client.eco.addMoney(message.author.id, parseInt(amount3));
           embed.setFooter(`${azcok} 𝙆𝙖𝙯𝙖𝙣ı𝙧, Tebrikler ,Kazandın!`)
         }
     
