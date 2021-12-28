@@ -20,15 +20,9 @@ exports.execute = async (client, message, args) => {
 
   let itemStruct = {
     name: item.toLowerCase(),
+    prize: hasItem.cost
   };
-  let myarray = client.db.get(`items_${itemStruct}`);
-// myarray looks like: ["item1", "item2"]
-
-// remove the last item from myarray
-let newarray = myarray.pop();
-
-// write back array
-client.db.set(itemStruct, newarray);
+     client.db.subtract(`items_${message.author.id-itemStruct}`, 1)
   return message.channel.send(
     `You sell **${item}** for **:dollar: ${hasItem.cost}**.`
   );
