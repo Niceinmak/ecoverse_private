@@ -6,6 +6,7 @@ exports.execute = async (client, message, args) => {
   let quantity=0;
   let randomcash = Math.floor(Math.random() * 200);
   let itemname=" "
+  let itemsname=""
   let count1=0
   //------------------------------------------
     const x = client.db.get(`items_${message.author.id}`);
@@ -14,13 +15,13 @@ exports.execute = async (client, message, args) => {
   }
   const arrayToObject = x.reduce((itemStruct, x) => {
     itemStruct[x.name] = (itemStruct[x.name] || 0) + 1;
-    itemname=" "+x.name
+    itemname=" "
     return itemStruct;
   }, {});
    client.db.delete(`items_${message.author.id}`)
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
     const  result4 = Object.keys(arrayToObject).find(k =>
-    itemname+=" "+k
+    itemname+=k+" "
   );
   var argString = itemname.substring(1).split(' ');
  // let argString = itemname.substr( itemname.indexOf(' ') + 1 );
@@ -32,14 +33,17 @@ exports.execute = async (client, message, args) => {
     {
       if(agr1=="yaygın.kasa")
         {
+          itemsname+="yaygın kasa ,"
           count1+=200;
         }
       if(agr1=="nadir.kasa")
         {
+          itemsname+="nadir kasa ,"
           count1+=2000;
         }
       if(agr1=="epik.kasa")
         {
+          itemsname+="epik kasa ,"
           count1+=20000;
         }
     }
@@ -47,14 +51,17 @@ exports.execute = async (client, message, args) => {
     {
       if(agr2=="yaygın.kasa")
         {
+          itemsname+="yaygın kasa ,"
           count1+=200;
         }
       if(agr2=="nadir.kasa")
         {
+          itemsname+="nadir kasa ,"
           count1+=2000;
         }
       if(agr2=="epik.kasa")
         {
+          itemsname+="epik kasa ,"
           count1+=20000;
         }
       
@@ -63,14 +70,17 @@ exports.execute = async (client, message, args) => {
     {
       if(agr3=="yaygın.kasa")
         {
+          itemsname+="yaygın kasa ,"
           count1+=200;
         }
       if(agr3=="nadir.kasa")
         {
+          itemsname+="nadir kasa ,"
           count1+=2000;
         }
       if(agr3=="epik.kasa")
         {
+          itemsname+="epik kasa ,"
           count1+=20000;
         }
       
@@ -81,9 +91,7 @@ exports.execute = async (client, message, args) => {
      quantity+=arrayToObject[k]
   );
      let sell = client.eco.addMoney(message.author.id, quantity*randomcash);
-    const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın ve ${quantity*randomcash}💶 kazandın.${quantity}$,${count1},${itemname},,,${agr1},,,${agr2}**`)
-  );
+     message.channel.send(`**${itemsname}** kasalarını sattın ve **${quantity*randomcash}💶 kazandın.**`)
 };
 
 exports.help = {
