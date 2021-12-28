@@ -33,12 +33,12 @@ exports.execute = async (client, message, args) => {
 
    let sell = client.eco.addMoney(message.author.id, quantity);
     const  result4 = Object.keys(arrayToObject).find(k =>
-    itemname=itemname+" "+k
+    itemname+=" "+k
   );
-  if(item)
-  let count2=itemname.args[0];
+ let count2= itemname(args[0]) // Responds "This"
+ let count3= itemname(args[1]) // Responds "is"
     const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname}${count2}**`)
+     message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname}${count2}${count3}*`)
   );
 };
 
