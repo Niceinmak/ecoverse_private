@@ -14,8 +14,12 @@ exports.execute = async (client, message, args) => {
   }, {});
    client.db.delete(`items_${message.author.id}`)
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
+   const resultyazı = Object.keys(arrayToObject).map(k =>
+     if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200)
+  );
+  
   const result = Object.keys(arrayToObject).map(k =>
-      message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*100}**💶 kazandın.`)
+     message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*100}**💶 kazandın.`)
   );
     const result2 = Object.keys(arrayToObject).map(k =>
   
