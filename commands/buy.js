@@ -27,7 +27,7 @@ exports.execute = async (client, message, args) => {
     count2++;
   }
   return message.channel.send(
-    `**${count2-1}** tane **${item}** aldın **:dollar: ${hasItem.cost}**.`
+    `**${count2-1}** tane **${item}** aldın **:dollar: ${hasItem.cost*item}**.`
   );
 };
 
