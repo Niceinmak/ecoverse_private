@@ -24,11 +24,11 @@ exports.execute = async (client, message, args) => {
         {
          
           let money= amount5*2
-            let data = client.eco.addMoney(client.ecoAddUser, parseInt(amount5));
+            let data = client.eco.addMoney(message.author.id, parseInt(amount5));
       msg.edit(`**${message.author.tag} | ** **${amount5}**💶 oynadı ve **${amount3}** seçti! \n Para döndürülüyor...🪙 ve **${(money)}**💶 Kazandın!`);
         }
     else {
-      let data2= client.eco.removeMoney(client.ecoAddUser, parseInt(amount5));
+      let data2= client.eco.removeMoney(message.author.id, parseInt(amount5));
      msg.edit(`**${message.author.tag} | ** **${amount5}**💶 oynadı ve **${amount3}** seçti! \n Para döndürülüyor...🪙 ve maalesef **kaybettin :c**`);
     }
         }, 3000);
@@ -56,11 +56,11 @@ exports.execute = async (client, message, args) => {
         {
          
           let money= amount3*2
-            let data = client.eco.addMoney(client.ecoAddUser, parseInt(amount3));
+            let data = client.eco.addMoney(message.author.id, parseInt(amount3));
       msg.edit(`**${message.author.tag} | ** **${amount3}**💶 oynadı ve **${yazitura}** seçti! \n Para döndürülüyor...🪙 ve **${(money)}**💶 Kazandın!`);
         }
     else {
-      let data2= client.eco.removeMoney(client.ecoAddUser, parseInt(amount3));
+      let data2= client.eco.removeMoney(message.author.id, parseInt(amount3));
      msg.edit(`**${message.author.tag} | ** **${amount3}**💶 oynadı ve **${yazitura}** seçti! \n Para döndürülüyor...🪙 ve maalesef **kaybettin :c**`);
     }
         }, 3000);
