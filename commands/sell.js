@@ -16,10 +16,10 @@ exports.execute = async (client, message, args) => {
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
    const resultcases = Object.keys(arrayToObject).map(k =>
      itemname=k
-  );
   if(itemname=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200)
   if(itemname=="nadir.kasa") randomcash = Math.floor(Math.random() * 2000)
   if(itemname=="epik.kasa") randomcash = Math.floor(Math.random() * 20000)
+  );
     const result2 = Object.keys(arrayToObject).map(k =>
   
      quantity=arrayToObject[k]*randomcash
