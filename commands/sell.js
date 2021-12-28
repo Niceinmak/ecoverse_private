@@ -23,18 +23,17 @@ exports.execute = async (client, message, args) => {
   
      quantity=arrayToObject[k]*randomcash
   );
+   message.channel.send(`kazandın.${quantity}${itemname}**`)
       const result3 = Object.keys(arrayToObject).map(k =>
   
      quantity=quantity+(arrayToObject[k]*randomcash)
   );
-  
+       const resultcases = Object.keys(arrayToObject).map(k =>
+     itemname+=k
+
+  );
    let sell = client.eco.addMoney(message.author.id, quantity);
-    const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}*`)
-  );
-     const resultcases = Object.keys(arrayToObject).map(k =>
-     itemname=k
-  );
+
 };
 
 exports.help = {
