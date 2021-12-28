@@ -17,15 +17,24 @@ exports.execute = async (client, message, args) => {
         " to buy this item."
     );
   let sell = client.eco.addMoney(message.author.id, hasItem.cost);
-
   let itemStruct = {
     name: item.toLowerCase(),
     prize: hasItem.cost
   };
-     client.db.delete(`items_${message.author.id-itemStruct}`, 1)
-  return message.channel.send(
-    `You sell **${item}** for **:dollar: ${hasItem.cost}**.`
+  //------------------------------------------
+    const x = client.db.get(`items_${message.author.id}`);
+  const arrayToObject = x.reduce((itemStruct, x) => {
+    itemStruct[x.name] = (itemStruct[x.name] || 0) + 1;
+    return itemStruct;
+  }, {});
+  const result = Object.keys(arrayToObject).map(k =>
+                                                
+      message.channel.send(
+    `You sell **${item}** for **:dollar: ${arrayToObject[k]}**.`
+  )
   );
+  //--------------------------------------------------
+   
 };
 
 exports.help = {
