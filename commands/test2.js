@@ -18,7 +18,7 @@ exports.execute = async (client, message, args) => {
 //        let data2= client.eco.addMoney(client.ecoAddUser, parseInt(kullaniciveri));        
 //        let data2= client.eco.setMoney(message.author.id, parseInt(kullaniciveri));
 //        let data2= client.eco.setMoney(client.ecoAddUser, parseInt(kullaniciveri));           
-//
+//---------------------------------------------------------------------------------------
     };
 
 exports.help = {
