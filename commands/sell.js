@@ -18,10 +18,7 @@ exports.execute = async (client, message, args) => {
   }, {});
    client.db.delete(`items_${message.author.id}`)
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
-   const resultcases = Object.keys(arrayToObject).map(k =>
-     itemname=k
 
-  );
     const result2 = Object.keys(arrayToObject).map(k =>
   
      quantity=arrayToObject[k]*randomcash
@@ -33,7 +30,10 @@ exports.execute = async (client, message, args) => {
   
    let sell = client.eco.addMoney(message.author.id, quantity);
     const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname}**`)
+     message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}*`)
+  );
+     const resultcases = Object.keys(arrayToObject).map(k =>
+     itemname=k
   );
 };
 
