@@ -16,7 +16,7 @@ exports.execute = async (client, message, args) => {
         hasItem.cost +
         " to buy this item."
     );
-  let buy = client.eco.removeMoney(message.author.id, hasItem.cost);
+  let sell = client.eco.addMoney(message.author.id, hasItem.cost);
 
   let itemStruct = {
     name: item.toLowerCase(),
@@ -24,12 +24,12 @@ exports.execute = async (client, message, args) => {
   };
      client.db.subtract(`items_${message.author.id-itemStruct}`, 1)
   return message.channel.send(
-    `You purchased **${item}** for **:dollar: ${hasItem.cost}**.`
+    `You sell **${item}** for **:dollar: ${hasItem.cost}**.`
   );
 };
 
 exports.help = {
-  name: "buy1",
+  name: "sell",
   aliases: [],
-  usage: `buy1 <item>`
+  usage: `sell <item>`
 };
