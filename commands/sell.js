@@ -6,6 +6,7 @@ exports.execute = async (client, message, args) => {
   let quantity=0;
   let randomcash = Math.floor(Math.random() * 200);
   let itemname=" "
+  let count1=0
   //------------------------------------------
     const x = client.db.get(`items_${message.author.id}`);
     if (!x) {
@@ -18,9 +19,6 @@ exports.execute = async (client, message, args) => {
   }, {});
    client.db.delete(`items_${message.author.id}`)
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
-
-
-   let sell = client.eco.addMoney(message.author.id, quantity);
     const  result4 = Object.keys(arrayToObject).find(k =>
     itemname+=" "+k
   );
@@ -30,7 +28,53 @@ exports.execute = async (client, message, args) => {
   let agr2=argString[1]
   let agr3=argString[1]
  // let [uid, newNickname] = argArr;
-  if()
+  if(agr1!="undefined")
+    {
+      if(agr1=="yaygın.kasa")
+        {
+          count1+=200;
+        }
+      if(agr1=="nadir.kasa")
+        {
+          count1+=2000;
+        }
+      if(agr1=="epik.kasa")
+        {
+          count1+=20000;
+        }
+    }
+    if(agr2!="undefined")
+    {
+      if(agr2=="yaygın.kasa")
+        {
+          count1+=200;
+        }
+      if(agr2=="nadir.kasa")
+        {
+          count1+=2000;
+        }
+      if(agr2=="epik.kasa")
+        {
+          count1+=20000;
+        }
+      
+    }
+    if(agr3!="undefined")
+    {
+      if(agr3=="yaygın.kasa")
+        {
+          count1+=200;
+        }
+      if(agr3=="nadir.kasa")
+        {
+          count1+=2000;
+        }
+      if(agr3=="epik.kasa")
+        {
+          count1+=20000;
+        }
+      let randomcash = Math.floor(Math.random() * count1);
+    }
     const result2 = Object.keys(arrayToObject).map(k =>
   
      quantity=arrayToObject[k]*randomcash
@@ -39,6 +83,7 @@ exports.execute = async (client, message, args) => {
   
      quantity=quantity+(arrayToObject[k]*randomcash)
   );
+     let sell = client.eco.addMoney(message.author.id, quantity);
     const result = Object.keys(arrayToObject).map(k =>
      message.channel.send(`**${k} Kasasını Sattın ve ${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname},,,${agr1},,,${agr2}**`)
   );
