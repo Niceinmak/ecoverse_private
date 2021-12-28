@@ -32,11 +32,12 @@ exports.execute = async (client, message, args) => {
   );
 
    let sell = client.eco.addMoney(message.author.id, quantity);
-    const  result = Object.keys(arrayToObject).find(k =>
+    const  result4 = Object.keys(arrayToObject).find(k =>
     itemname=itemname+" "+k
   );
+  if(item)
   let count2=itemname.args[0];
-    result = Object.keys(arrayToObject).map(k =>
+    const result = Object.keys(arrayToObject).map(k =>
      message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname}${count2}**`)
   );
 };
