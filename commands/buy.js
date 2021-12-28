@@ -14,9 +14,9 @@ exports.execute = async (client, message, args) => {
   let isBalanceEnough = userBalance.amount >= hasItem.cost*count2;
   if (!isBalanceEnough)
     return message.reply(
-      "Your balance is insufficient. You need :dollar: " +
-        hasItem.cost +
-        " to buy this item."
+      "Bu eşyayı alabilmek için" +
+        hasItem.cost*count2 +
+        "💶."
     );
   let buy = client.eco.removeMoney(message.author.id, hasItem.cost);
   let itemStruct = {
