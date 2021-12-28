@@ -20,9 +20,6 @@ exports.execute = async (client, message, args) => {
   if(itemname=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200)
   if(itemname=="nadir.kasa") randomcash = Math.floor(Math.random() * 2000)
   if(itemname=="epik.kasa") randomcash = Math.floor(Math.random() * 20000)
-  const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*randomcash}**💶 kazandın.`)
-  );
     const result2 = Object.keys(arrayToObject).map(k =>
   
      quantity=arrayToObject[k]*randomcash
@@ -33,6 +30,9 @@ exports.execute = async (client, message, args) => {
   );
   
    let sell = client.eco.addMoney(message.author.id, quantity);
+    const result = Object.keys(arrayToObject).map(k =>
+     message.channel.send(`**${k} Kasasını Sattın ve **${arrayToObject[k]*randomcash}💶 kazandın.${quantity}**`)
+  );
 };
 
 exports.help = {
