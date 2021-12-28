@@ -73,19 +73,16 @@ exports.execute = async (client, message, args) => {
         {
           count1+=20000;
         }
-      let randomcash = Math.floor(Math.random() * count1);
+      
     }
+  randomcash = Math.floor(Math.random() * count1);
     const result2 = Object.keys(arrayToObject).map(k =>
   
-     quantity=arrayToObject[k]*randomcash
+     quantity+=arrayToObject[k]
   );
-      const result3 = Object.keys(arrayToObject).map(k =>
-  
-     quantity=quantity+(arrayToObject[k]*randomcash)
-  );
-     let sell = client.eco.addMoney(message.author.id, quantity);
+     let sell = client.eco.addMoney(message.author.id, quantity*randomcash);
     const result = Object.keys(arrayToObject).map(k =>
-     message.channel.send(`**${k} Kasasını Sattın ve ${arrayToObject[k]*randomcash}💶 kazandın.${quantity}${itemname},,,${agr1},,,${agr2}**`)
+     message.channel.send(`**${k} Kasasını Sattın ve ${quantity*randomcash}💶 kazandın.${quantity}$,${count1},${itemname},,,${agr1},,,${agr2}**`)
   );
 };
 
