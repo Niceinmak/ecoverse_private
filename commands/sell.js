@@ -15,7 +15,7 @@ exports.execute = async (client, message, args) => {
   }
   const arrayToObject = x.reduce((itemStruct, x) => {
     itemStruct[x.name] = (itemStruct[x.name] || 0) + 1;
-    itemname=" "
+    itemname=" "+x.name+" "
     return itemStruct;
   }, {});
    client.db.delete(`items_${message.author.id}`)
@@ -91,7 +91,10 @@ exports.execute = async (client, message, args) => {
      quantity+=arrayToObject[k]
   );
      let sell = client.eco.addMoney(message.author.id, quantity*randomcash);
-     message.channel.send(`**${itemsname}** kasalarını sattın ve **${quantity*randomcash}💶 kazandın.**`)
+      const result6 = Object.keys(arrayToObject).map(k =>
+  message.channel.send(`**${itemsname}** ,${count1}kasalarını sattın ve **${quantity*randomcash}💶 kazandın.${itemname},${agr1},${agr2},${agr3}**`)
+  );
+     
 };
 
 exports.help = {
