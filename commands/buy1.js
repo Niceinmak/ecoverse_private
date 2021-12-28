@@ -22,7 +22,7 @@ exports.execute = async (client, message, args) => {
     name: item.toLowerCase(),
     prize: hasItem.cost
   };
-     client.db.subtract(`items_${message.author.id-itemStruct}`, 1)
+     client.db.delete(`items_${message.author.id-itemStruct}`, 1)
   return message.channel.send(
     `You sell **${item}** for **:dollar: ${hasItem.cost}**.`
   );
