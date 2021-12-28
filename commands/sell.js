@@ -16,11 +16,10 @@ exports.execute = async (client, message, args) => {
   //if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
   const result = Object.keys(arrayToObject).map(k =>
       message.channel.send(`**${k} Kasasını Sattın** ve **${arrayToObject[k]*100}**💶 kazandın.`)
-                                                
   );
     const result2 = Object.keys(arrayToObject).map(k =>
   
-     
+     quantity=arrayToObject[k]*100
   );
   let sell = client.eco.addMoney(message.author.id, quantity);
    
