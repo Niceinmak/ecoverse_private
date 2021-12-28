@@ -6,7 +6,7 @@ exports.execute = async (client, message, args) => {
     if (!user) return message.channel.send("Sadece yetkili kişiler para gönderebilir!");
     let amount = args[1];
     if (!amount || isNaN(amount)) return message.reply("Please specify a valid amount.");
-    let data = client.eco.addMoney(message.author.id, parseInt(amount));
+    let data = client.eco.addMoney(user.id, parseInt(amount));
     const embed = new MessageEmbed()
         .setTitle(`Money Added!`)
         .addField(`User`, `<@${data.user}>`)
