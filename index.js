@@ -7,14 +7,14 @@ client.config = require("./botConfig");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.shop = {
-  "Kase" : {
+  "Yaygın.kasa" : {
     cost: 100
   },
-  "Mobile" : {
-    cost: 100
+  "Nadir.kasa" : {
+    cost: 1000
   },
-  "PC" : {
-    cost: 100
+  "Epik.kasa" : {
+    cost: 10000
   }
 };
 const fs = require("fs");

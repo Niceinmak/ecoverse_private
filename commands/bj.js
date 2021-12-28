@@ -15,6 +15,7 @@ exports.execute = async (client, message, args) => {
     let authordata = client.eco.fetchMoney(message.author.id) 
     let timecooldown = Math.floor(Math.random() * 200)+50;
         let playtime = await client.eco.beg(client.ecoAddUser, timecooldown,{ canLose: true, cooldown: 5000, customName: "search" });
+  let data2= client.eco.removeMoney(message.author.id, parseInt(timecooldown));
     if (playtime.onCooldown) return message.reply(`**Biraz yavaş ol,${playtime.time.seconds} saniye daha bekle.**`);
      if (!amount3 || isNaN(amount3)) return message.channel.send(`** ⛔${message.author.tag} | ** Lütfen Sayı Giriniz.`);
   else{
