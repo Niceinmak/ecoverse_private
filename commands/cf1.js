@@ -6,8 +6,8 @@ exports.execute = async (client, message, args) => {
     let amount5 = args[1]
     let yazitura= ""
     let authordata = client.eco.fetchMoney(message.author.id) 
-    let timecooldown = Math.floor(Math.random() * 0)+0;
-        let playtime = await client.eco.beg(client.ecoAddUser, timecooldown,{ canLose: false, cooldown: 5000, customName: "search" });
+        let timecooldown = Math.floor(Math.random() * 200)+50;
+        let playtime = await client.eco.beg(client.ecoAddUser, timecooldown,{cooldown: 5000});
     if (playtime.onCooldown) return message.reply(`**Biraz yavaş ol,${playtime.time.seconds} saniye daha bekle.**`);
         if (amount3=="yazı" || amount3=="tura")
  {
