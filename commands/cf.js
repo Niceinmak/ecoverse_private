@@ -28,7 +28,7 @@ exports.execute = async (client, message, args) => {
            if([Math.floor(amount2)]==0)
         {
             let data = client.eco.addMoney(message.author.id, parseInt(amount5));
-      msg.edit(`**${message.author.tag} | ** **${amount5}**💶 oynadı ve **${amount3}** seçti! \n Para döndürülüyor...🪙 ve **${(amount5)}**💶 Kazandın!`);
+      msg.edit(`**${message.author.tag} | ** **${amount5}**💶 oynadı ve **${amount3}** seçti! \n Para döndürülüyor...🪙 ve **${(amount5*2)}**💶 Kazandın!`);
         }
     else {
       let data2= client.eco.removeMoney(message.author.id, parseInt(amount5));
@@ -58,7 +58,7 @@ exports.execute = async (client, message, args) => {
            if([Math.floor(amount2)]==0)
         {
             let data = client.eco.addMoney(message.author.id, parseInt(amount3));
-      msg.edit(`**${message.author.tag} | ** **${amount3}**💶 oynadı ve **${yazitura}** seçti! \n Para döndürülüyor...🪙 ve **${(amount3)}**💶 Kazandın!`);
+      msg.edit(`**${message.author.tag} | ** **${amount3}**💶 oynadı ve **${yazitura}** seçti! \n Para döndürülüyor...🪙 ve **${(amount3*2)}**💶 Kazandın!`);
         }
     else {
       let data2= client.eco.removeMoney(message.author.id, parseInt(amount3));
