@@ -5,13 +5,13 @@ exports.execute = async (client, message, args) => {
     let user = message.mentions.users.first();
     if (!user) return message.channel.send("Sadece yetkili kişiler para gönderebilir!");
     let amount = args[1];
-    if (!amount || isNaN(amount)) return message.reply("Please specify a valid amount.");
+    if (!amount || isNaN(amount)) return message.reply("Lütfen geçerli bir değer girin.");
     let data = client.eco.addMoney(user.id, parseInt(amount));
     const embed = new MessageEmbed()
-        .setTitle(`Money Added!`)
-        .addField(`User`, `<@${data.user}>`)
-        .addField(`Balance Given`, `${data.amount} 💸`)
-        .addField(`Total Amount`, data.after)
+        .setTitle(`Para eklendi!`)
+        .addField(`Kullanıcı`, `<@${data.user}>`)
+        .addField(`Gönderilen para`, `${data.amount} 💸`)
+        .addField(`Toplam para`, data.after)
         .setColor("RANDOM")
         .setThumbnail(user.displayAvatarURL)
         .setTimestamp();
