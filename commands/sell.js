@@ -5,7 +5,7 @@ exports.execute = async (client, message, args) => {
   let item = args[0];
   let quantity=0;
   let randomcash = Math.floor(Math.random() * 200);
-  let itemname=""
+  let itemname=" "
   let count1=0
   //------------------------------------------
     const x = client.db.get(`items_${message.author.id}`);
@@ -17,8 +17,9 @@ exports.execute = async (client, message, args) => {
     return itemStruct;
   }, {});
 //  if(k=="yaygın.kasa") randomcash = Math.floor(Math.random() * 200);
-    const  result4 = Object.keys(arrayToObject).find(k =>
-    itemname=itemname+(k)
+    const result = Object.keys(arrayToObject).map(k =>
+       itemname+=" "+k+" "%arrayToObject[k]
+  //   message.channel.send(`**${k} Kasasını Sattın ve ${randomcash},${quantity*randomcash}💶 kazandın.${quantity}$,${count1},${itemname},,,${agr1},,,${agr2},,,${agr3}**`)
   );
      client.db.delete(`items_${message.author.id}`)
   var argString = itemname.substring(1).split(' ');
@@ -79,11 +80,12 @@ exports.execute = async (client, message, args) => {
   
      quantity+=arrayToObject[k]
   );
-     let sell = client.eco.addMoney(message.author.id, quantity*randomcash);
-    const result = Object.keys(arrayToObject).map(k =>
-       message.channel.send(`**${k} Kasasını Sattın ve ${randomcash},${quantity*randomcash}💶 ${itemname}kazandın.$**`)
-  //   message.channel.send(`**${k} Kasasını Sattın ve ${randomcash},${quantity*randomcash}💶 kazandın.${quantity}$,${count1},${itemname},,,${agr1},,,${agr2},,,${agr3}**`)
+     let sell = client.eco.addMoney(message.author.id, 1);
+
+      const  result4 = Object.keys(arrayToObject).find(k =>
+    message.channel.send(`**${k} Kasasını Sattın ve ${randomcash},${quantity*randomcash}💶 ${itemname}kazandın.${agr1},${agr2},${agr3}**`)
   );
+   
 };
 
 exports.help = {
