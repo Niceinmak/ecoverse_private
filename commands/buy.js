@@ -20,7 +20,7 @@ exports.execute = async (client, message, args) => {
     return message.channel.send(`**${message.author.tag} | Bu eşyayı alabilmek için ${hasItem.cost*count}💶 ihtiyacın var.Şuanki paran ${userBalance.amount}💶**`);
     }
   if(count<1) return message.reply(`**Unutma,1'den az eşya alamassın.**`);
-  let buy = client.eco.removeMoney(message.author.id, hasItem.cost);
+  let buy = client.eco.removeMoney(message.author.id, hasItem.cost*count);
   let itemStruct = {
     name: item.toLowerCase(),
     prize: hasItem.cost
