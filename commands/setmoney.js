@@ -7,6 +7,9 @@ exports.execute = async (client, message, args) => {
     let amount = args[1];
     if (!amount || isNaN(amount)) return message.reply("Lütfen geçerli bir miktar giriniz.");
     let data = client.eco.setMoney(user.id, parseInt(amount));
+     if(amount>0)  data = client.eco.setMoney(user.id, parseInt(amount));
+    if(amount<=0)  data = client.eco.setMoney(user.id, parseInt(0));
+    
     const embed = new MessageEmbed()
         .setTitle(`Para güncellendi!`)
         .addField(`Kullanıcı`, `<@${data.user}>`)
