@@ -1,6 +1,6 @@
 exports.execute = async (client, message, args) => {
     let amount = Math.floor(Math.random() * 200)+50;
-    let amount2 = Math.floor(Math.random() * 200)/100;
+    let amount2 = Math.floor(Math.random() * 2);
     let amount4 = Math.floor(Math.random() * 200)/100;
     let amount3 = args[0]
     let amount5 = args[1]
