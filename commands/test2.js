@@ -22,7 +22,7 @@ exports.execute = async (client, message, args) => {
     };
 
 exports.help = {
-    name: "test",
+    name: "test2",
     aliases: [],
     usage: "test2 <amount>"
 }
