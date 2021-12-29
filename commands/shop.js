@@ -5,11 +5,11 @@ exports.execute = async (client, message, args) => {
   let content = "";
   
   for (var i in items) {
-    content += `${items[i]} - :dollar: ${client.shop[items[i]].cost}\n`
+    content += `${items[i]} - 💶 ${client.shop[items[i]].cost}\n`
   }
   
   let embed = new MessageEmbed()
-  .setTitle("Store")
+  .setTitle("Mağaza")
   .setDescription(content)
   .setColor("BLURPLE")
   .setFooter("Eşya almak için q buy <isim> <miktar>")

@@ -1,12 +1,12 @@
 exports.execute = async (client, message, args) => {
   let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) 
   let authordata = client.eco.fetchMoney(message.author.id) 
-  if (!member) return message.channel.send('Please mention the person or give their ID') 
+  if (!member) return message.channel.send('Kime para göndermek istiyorsun?') 
   let amount = args[1]
-  if (!amount || isNaN(amount)) return message.channel.send('Please enter a valid amount to transfer') 
-  if(authordata.amount < amount) return message.channel.send('Looks like you don\'t have that much money') 
+  if (!amount || isNaN(amount)) return message.channel.send('Lütfen geçerli bir miktar giriniz') 
+  if(authordata.amount < amount) return message.channel.send('Görünüşe göre senin o kadar paran yok') 
   await client.eco.transfer(message.author.id, member.id, amount) 
-  return message.channel.send(`You have successfully transferred 💸**${amount}** to ** ${member.user.tag}**.`)
+  return message.channel.send(`Gönderme işlemi başarılı **${amount}**💶 parayı ** ${member.user.tag}** kişisine gönderdin.`)
 }
 exports.help = {
   name: "transfer",

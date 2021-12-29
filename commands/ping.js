@@ -6,8 +6,8 @@ exports.execute = (client, message, args) => {
         const trip = Math.floor(m.createdTimestamp - message.createdTimestamp);
         const embed = new MessageEmbed()
             .setTitle("Pong!")
-            .addField("API Latency", `${gatewayLatency}ms`, true)
-            .addField("Client Latency", `${trip}ms`, true)
+            .addField("API Gecikmesi", `${gatewayLatency}ms`, true)
+            .addField("Client Gecikmesi", `${trip}ms`, true)
             .setColor("#7289DA")
             .setTimestamp();
         m.edit(embed);
