@@ -30,7 +30,7 @@ exports.execute = async (client, message, args) => {
     count2++;
   }
   return message.channel.send(
-    `**${message.author.tag} | ${count2-1} tane ${item} aldın.\n Toplam ${hasItem.cost*(count2-1)}💶 tuttu.**`
+    `**${message.author.tag} | You purchased ${item} x${count2-1} for ${hasItem.cost*(count2-1)}💶**`
   );
 };
 
