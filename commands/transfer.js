@@ -5,6 +5,7 @@ exports.execute = async (client, message, args) => {
   let amount = args[1]
   if (!amount || isNaN(amount)) return message.channel.send('Please enter a valid amount to transfer') 
   if(authordata.amount < amount) return message.channel.send('Looks like you don\'t have that much money') 
+  if(message.author.id==member.id) return message.channel.send("You **can't** send money to yourself :D")
   await client.eco.transfer(message.author.id, member.id, amount) 
   return message.channel.send(`You have successfully transferred 💶**${amount}** to ** ${member.user.tag}**.`)
 }
