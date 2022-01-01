@@ -15,7 +15,7 @@ exports.execute = async (client, message, args) => {
   //------------------------------------------
     const x = client.db.get(`items_${message.author.id}`);
     if (!x) {
-    return message.channel.send(`${message.author.tag} | Satılacak eşya bulunamadı`);
+    return message.channel.send(`${message.author.tag} | Item not found for sale`);
   }
   const arrayToObject = x.reduce((itemStruct, x) => {
     itemStruct[x.name] = (itemStruct[x.name] || 0) + 1;
@@ -38,7 +38,7 @@ exports.execute = async (client, message, args) => {
   count1=agr2;
       count2=agr4;
       count3=agr6;
-  if(agr1=="yaygın.kasa")
+  if(agr1=="common.case")
     {
         randomcash = Math.floor(Math.random() * 200);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr2);
@@ -46,14 +46,14 @@ exports.execute = async (client, message, args) => {
       totalcash2+=` ${agr1},`
       
     }
-  if(agr1=="nadir.kasa")
+  if(agr1=="rare.case")
     {
         randomcash = Math.floor(Math.random() * 2000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr2);
   totalcash+=randomcash*agr2
      totalcash2+=` ${agr1},`
     }
-    if(agr1=="epik.kasa")
+    if(agr1=="epic.case")
     {
         randomcash = Math.floor(Math.random() * 20000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr2);
@@ -62,21 +62,21 @@ exports.execute = async (client, message, args) => {
     }
   if(count2!=null)
     {
-       if(agr3=="yaygın.kasa")
+       if(agr3=="common.case")
     {
         randomcash = Math.floor(Math.random() * 200);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr4);
   totalcash+=randomcash*agr4
      totalcash2+=` ${agr3},`
     }
-  if(agr3=="nadir.kasa")
+  if(agr3=="rare.case")
     {
         randomcash = Math.floor(Math.random() * 2000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr4);
   totalcash+=randomcash*agr4
     totalcash2+=` ${agr3},`
     }
-    if(agr3=="epik.kasa")
+    if(agr3=="epic.case")
     {
         randomcash = Math.floor(Math.random() * 20000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr4);
@@ -86,21 +86,21 @@ exports.execute = async (client, message, args) => {
     }
     if(count3!=null)
     {
-    if(agr5=="yaygın.kasa")
+    if(agr5=="common.case")
     {
         randomcash = Math.floor(Math.random() * 200);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr6);
   totalcash+=randomcash*agr6
      totalcash2+=` ${agr5},`
     }
-  if(agr5=="nadir.kasa")
+  if(agr5=="rare.case")
     {
         randomcash = Math.floor(Math.random() * 2000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr6);
   totalcash+=randomcash*agr6
       totalcash2+=` ${agr5},`
     }
-    if(agr5=="epik.kasa")
+    if(agr5=="epic.case")
     {
         randomcash = Math.floor(Math.random() * 20000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr6);
@@ -115,7 +115,7 @@ exports.execute = async (client, message, args) => {
    //  let sell = client.eco.addMoney(message.author.id, 1);
 
       const  result2 = Object.keys(arrayToObject).find(k =>
-    message.channel.send(`${message.author.tag} | Tebrikler! **${totalcash2}** kasalarını sattın ve **${totalcash}**💶kazandın.`)
+    message.channel.send(`${message.author.tag} | Congrulations! You selled**${totalcash2}** cases and earn **${totalcash}**💶!`)
   );
    
 };

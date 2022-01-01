@@ -2,14 +2,14 @@ exports.execute = async (client, message, args) => {
     let users = [
         "Street",
         "ZLos Angeles",
-        "Sunucunun admini",
-        "Sokakdaki yaşlı gitarcı"
+        "Sofiath database",
+        "Metaverse"
     ];
     let amount = Math.floor(Math.random() * 200) + 50;
     let beg = await client.eco.beg(message.author.id, amount, { canLose: true, cooldown: 300000, customName: "search" });
-    if (beg.onCooldown) return message.reply(`${beg.time.minutes} dakika & ${beg.time.seconds} saniye sonra tekrar gel.`);
-    if (beg.lost) return message.channel.send(`**${users[Math.floor(Math.random() * users.length)]}:** Yakalandın! Parayı alamadın ufaklık.`);
-    else return message.reply(`**${users[Math.floor(Math.random() * users.length)]}** ile karlı çıktın,**${beg.amount}**💶 para buldun. Şuan ki paran:**${beg.after}** 💶.`);
+    if (beg.onCooldown) return message.reply(`Come back after **${beg.time.minutes}** minutes & **${beg.time.seconds}** seconds.`);
+    if (beg.lost) return message.channel.send(`**${users[Math.floor(Math.random() * users.length)]}:** You were caught! You couldn't get money kiddo.`);
+    else return message.reply(`**${users[Math.floor(Math.random() * users.length)]}** was somewhat profitable, you found **${beg.amount}**💶. Now you have **${beg.after}** 💶.`);
 };
 
 exports.help = {

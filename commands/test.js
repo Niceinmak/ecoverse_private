@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
     const embed = new MessageEmbed()
-        .setTitle(`Test Başarılı!`)
+        .setTitle(`Test Successful!`)
     return message.channel.send(embed);
 }
 

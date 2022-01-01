@@ -9,10 +9,10 @@ exports.execute = async (client, message, args) => {
   }
   
   let embed = new MessageEmbed()
-  .setTitle("Mağaza")
+  .setTitle("Store")
   .setDescription(content)
   .setColor("BLURPLE")
-  .setFooter("Eşya almak için q buy <isim> <miktar>")
+  .setFooter("Do :q buy <item> <quantity> to purchase the item.")
   return message.channel.send(embed);
 };
 
