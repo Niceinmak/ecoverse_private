@@ -16,11 +16,11 @@ exports.execute = async (client, message, args) => {
     let timecooldown = Math.floor(Math.random() * 200)+50;
         let playtime = await client.eco.beg(client.ecoAddUser, timecooldown,{ canLose: true, cooldown: 5000, customName: "search" });
   let data2= client.eco.removeMoney(message.author.id, parseInt(timecooldown));
-    if (playtime.onCooldown) return message.reply(`**Biraz yavaş ol,${playtime.time.seconds} saniye daha bekle.**`);
-     if (!amount3 || isNaN(amount3)) return message.channel.send(`** ⛔${message.author.tag} | ** Lütfen Sayı Giriniz.`);
+    if (playtime.onCooldown) return message.reply(`**Take it slow,wait ${playtime.time.seconds} more seconds**`);
+     if (!amount3 || isNaN(amount3)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
   else{
-    if(amount3>authordata.amount || amount3<1) return message.channel.send(`** ⛔${message.author.tag} | ** Kendi bakiyenizden büyük ve 1'den küçük sayı giremessiniz.`);
-     if(amount3<authordata.amount) return message.channel.send(`** ⛔${message.author.tag} | ** Bu komut bakımda`); //bj'yi buga sokar
+    if(amount3>authordata.amount || amount3<1) return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);
+     if(amount3<authordata.amount) return message.channel.send(`** ⛔${message.author.tag} | ** This command is in maintenance`); //bj'yi buga sokar
     if([Math.floor(amount2)]==0) 
     {
       azcok="En Az Atan"
