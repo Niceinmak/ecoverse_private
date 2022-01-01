@@ -1,7 +1,7 @@
 exports.execute = async (client, message, args) => {
     let users = [
-        "Metverse'deki zengin cna",
-        "Zengin kız fakir oğlan dizisindeki fakir oğlan",
+        "Street",
+        "ZLos Angeles",
         "Sunucunun admini",
         "Sokakdaki yaşlı gitarcı"
     ];
