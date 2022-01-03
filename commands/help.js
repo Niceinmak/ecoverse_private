@@ -54,11 +54,12 @@ exports.execute = async (client, message, args) => {
       let counter=0
       let counter2=0
       let count=""
-      for (var i = 0; i <= client.commands.size; i++) {
+      for (var i = 0; i < client.commands.size; i++) {
         count+=argString[i]
       if(amount3==argString[i])
       {
         counter++
+        break;
        } 
         counter2++
         }
@@ -66,9 +67,9 @@ exports.execute = async (client, message, args) => {
         {
           let cmdcounter=0
           client.commands.forEach(cmd => {
-            if(counter2-10==cmdcounter)
+            if(counter2==cmdcounter)
               {
-                embed.setDescription(`\`${client.prefix}${cmd.help.usage}${counter2}\``);
+                embed.setDescription(`**Usage:**\`${client.prefix}${cmd.help.usage}\`\n**Aliases:**\`${cmd.help.aliases.join(", ") || "None"}\``);
               }
         cmdcounter++
     });
