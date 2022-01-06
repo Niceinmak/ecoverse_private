@@ -12,6 +12,7 @@ exports.execute = async (client, message, args) => {
     if (rob.onCooldown) return message.reply(`**You have recently attempted to rob someone try again after ${rob.time.seconds} seconds.**`);
     if (rob.lost) return message.channel.send(messages[Math.floor(Math.random() * messages.length)]);
     else { 
+      if(amount>(target.id).amount) amount=(target.id).amount
       let x = client.eco.fetchMoney(target.id).amount - amount 
       
       client.eco.setMoney(target.id,parseInt(x))
