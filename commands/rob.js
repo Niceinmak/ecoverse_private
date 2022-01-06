@@ -13,9 +13,10 @@ exports.execute = async (client, message, args) => {
     if (rob.lost) return message.channel.send(messages[Math.floor(Math.random() * messages.length)]);
     else { 
       if(amount>(target.id).amount) amount=(target.id).amount
-      let x = client.eco.fetchMoney(target.id).amount - amount 
-      
-      client.eco.setMoney(target.id,parseInt(x))
+      client.eco.removeMoney(target.id, parseInt(amount));
+    //  let x = client.eco.fetchMoney(target.id).amount - amount 
+      client.eco.addMoney(message.author.id, parseInt(amount));
+     // client.eco.setMoney(target.id,parseInt(x))
       message.reply(`**You robbed ${target}** for **${rob.amount}** 💶. Now you have **${rob.after}** 💶.`);
     }
 };
