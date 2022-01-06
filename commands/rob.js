@@ -1,6 +1,8 @@
 exports.execute = async (client, message, args) => {
   let target = message.mentions.members.first() || message.guild.members.cache.get(args[0]) 
   let authordata = client.eco.fetchMoney(message.author.id) 
+  let authordataname = client.eco.fetchMoney(message.author.id) 
+  let targetname=args[0]
   let targetBalance = client.eco.fetchMoney(target.id);
   if(!target) return message.reply("Who are you trying to rob?")
   let messages = [
@@ -9,10 +11,13 @@ exports.execute = async (client, message, args) => {
     `You failed robbing ${target} becase the avengers got you`
   ]
    let amount = Math.floor(Math.random() * 50) + 10;
-  if(targetBalance.amount=="0") return message.reply(`**The person you're stealing has no money left.**`);
+  
   if(amount>targetBalance.amount) amount=(targetBalance.amount)-1
+  if(target.id==message.author.id) return message.reply(`**You can't steal money from yourself**`);
+  if(targetBalance.amount<="10") return message.reply(`**The person you're stealing has very little money**`);
     let rob = client.eco.beg(client.ecoAddUser, amount, { canLose: true });
     if (rob.onCooldown) return message.reply(`**You have recently attempted to rob someone try again after ${rob.time.seconds} seconds.**`);
+  
     if (rob.lost) return message.channel.send(messages[Math.floor(Math.random() * messages.length)]);
     else { 
      // client.eco.removeMoney(target.id, parseInt(amount));
