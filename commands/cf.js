@@ -73,6 +73,6 @@ exports.execute = async (client, message, args) => {
 
 exports.help = {
     name: "cf",
-    aliases: ["coinflip","yazıtura"],
+    aliases: ["coinflip","CF"],
     usage: "cf <yazı,tura> <miktar>"
 }

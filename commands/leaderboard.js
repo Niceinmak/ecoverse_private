@@ -18,6 +18,6 @@ exports.execute = async (client, message, args) => {
 
 exports.help = {
     name: "lb",
-    aliases: ["leaderboard"],
+    aliases: ["leaderboard","LB"],
     usage: `lb`
 }

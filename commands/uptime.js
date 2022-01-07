@@ -13,6 +13,6 @@ return message.reply(`** Bot Running Time \`${days}\` hour \`${hours}\` hours \`
 
 exports.help = {
     name: "uptime",
-    aliases: [],
+    aliases: ["UPTIME"],
     usage: `uptime`
 }

@@ -7,6 +7,6 @@ exports.execute = async (client, message, args) => {
 
 exports.help = {
     name: "weekly",
-    aliases: [],
+    aliases: ["WEEKLY"],
     usage: "weekly"
 }

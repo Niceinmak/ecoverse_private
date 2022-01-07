@@ -16,6 +16,6 @@ exports.execute = (client, message, args) => {
 
 exports.help = {
     name: "ping",
-    aliases: ["pong", "latency"],
+    aliases: ["pong", "latency","PING"],
     usage: `ping`
 }

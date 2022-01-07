@@ -67,6 +67,6 @@ module.exports.help = {
 
 exports.help = {
     name: "test",
-    aliases: ["h","t"],
+    aliases: ["h","t","TEST"],
     usage: `test`
 }

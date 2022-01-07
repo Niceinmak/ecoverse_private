@@ -20,6 +20,6 @@ exports.execute = async (client, message, args) => {
 
 exports.help = {
     name: "setmoney",
-    aliases: ["setbal","set"],
+    aliases: ["setbal","set","SET","SETMONEY"],
     usage: `setmoney @user <amount>`
 }

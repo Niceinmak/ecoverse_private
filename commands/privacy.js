@@ -59,6 +59,6 @@ exports.execute = async (client, message, args) => {
 
 exports.help = {
     name: "privacy",
-    aliases: [],
+    aliases: ["PRIVACY"],
     usage: `privacy`
 }
