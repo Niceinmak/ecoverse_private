@@ -1,4 +1,5 @@
 dependencies:
+  discord-buttons: 4.0.0-deprecated
   discord.js: 12.5.3
   quick.eco: 2.0.4
 packages:
@@ -148,6 +149,11 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
+  /discord-buttons/4.0.0-deprecated:
+    deprecated: 'New lib is coming! Join our support server for more help: https://discord.gg/KUS5pjyA4J'
+    dev: false
+    resolution:
+      integrity: sha512-9pH8YHRumOz9+VJr/MNJEdYDSMJiL0tCJ+wKPtjQQusohJHL1KTTxRtT1PH8snXYQKoevZ1c0YJ3ZWW4uTsIMA==
   /discord.js/12.5.3:
     dependencies:
       '@discordjs/collection': 0.1.6
@@ -636,5 +642,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  discord-buttons: ^4.0.0-deprecated
   discord.js: ^12.5.3
   quick.eco: ^2.0.3
