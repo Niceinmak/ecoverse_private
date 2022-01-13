@@ -18,6 +18,7 @@ exports.execute = async (client, message, args) => {
   let data2= client.eco.removeMoney(message.author.id, parseInt(timecooldown));
     if (playtime.onCooldown) return message.reply(`**Take it slow,wait ${playtime.time.seconds} more seconds**`);
       if(userdata=="all") userdata=authordata.amount;
+  if(userdata=="half") userdata=authordata.amount/2 , userdata=parseInt(userdata);
      if (!userdata || isNaN(userdata)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
   else{
     if(userdata>authordata.amount || userdata<1) return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);
