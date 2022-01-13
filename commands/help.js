@@ -29,15 +29,28 @@ exports.execute = async (client, message, args) => {
   let economyaliases=""
   let utilityname=""
   let onlyadminsname=""
+  let gamesname=""
+    let gamescommands = [
+        "cf",
+        "rob",
+        "beg",
+        "daily",
+        "spin",
+        "search",
+        "slots",
+        "weekly"
+    ];
   let utilitycommands = [
         "prefix",
         "ping",
         "uptime",
-        "privacy"
+        "privacy",
+        "supportserver"
     ];
   let onlyadminscommands = [
         "addmoney",
-        "setmoney"
+        "setmoney",
+        "test"
     ];
   let amount3 = args[0]
  /*   client.commands.forEach(cmd => {
@@ -55,6 +68,13 @@ exports.execute = async (client, message, args) => {
         count++;
       }
     }
+    for (var i = 0; i < gamescommands.length; i++) {
+     if(cmd.help.name==gamescommands[i])
+      {
+         gamesname+=` \`${cmd.help.name}\` ` 
+        count++;
+      }
+    }
      for (var i = 0; i < onlyadminscommands.length; i++) {
      if(cmd.help.name==onlyadminscommands[i])
       {
@@ -68,7 +88,16 @@ exports.execute = async (client, message, args) => {
       }
   //  economyusage+=` \`${client.prefix}${cmd.help.usage}\` `
     }); 
-  embed.setDescription(`Here is the list of commands!\n**For more info on a specific command, use** \`${client.prefix} help <command>\`\n\n**Economy💰**\n${economyname}\n\n**Only Admins **🚫\n${onlyadminsname}\n\n**Utility**🔧\n${utilityname}`);
+  embed.setDescription(`Here is the list of commands!\n**For more info on a specific command, use** \`${client.prefix} help <command>\`
+  
+  **Games**💵\n${gamesname}   
+  
+  **Economy💰**\n${economyname}
+  
+  **Only Admins **🚫\n${onlyadminsname}
+  
+  **Utility**🔧\n${utilityname}`                 
+                      );
     return message.channel.send(embed);
     }
   else
