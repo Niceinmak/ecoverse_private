@@ -13,7 +13,7 @@ exports.execute = async (client, message, args) => {
     let amount3 = args[0]
     let authordata = client.eco.fetchMoney(message.author.id) 
     let timecooldown = Math.floor(Math.random() * 200)+50;
-    let playtime = await client.eco.work(client.ecoAddUser, timecooldown,{cooldown: 5000});
+    let playtime = await client.eco.beg(client.ecoAddUser, timecooldown,{cooldown: 5000});
     let data2= client.eco.removeMoney(message.author.id, parseInt(timecooldown));
     const user1 = message.mentions.users.first() || message.member.user
     if (playtime.onCooldown) return message.reply(`**Take it slow,wait ${playtime.time.seconds} more seconds**`);
@@ -43,7 +43,7 @@ exports.execute = async (client, message, args) => {
               }, 1000);
             setTimeout(() => {
              embed.fields = [];
-              if(amount>=40)
+              if(amount>=35)
                 {
                   card1="💯"
                 }
@@ -60,7 +60,7 @@ exports.execute = async (client, message, args) => {
           setTimeout(() => {
             let amount = Math.floor(Math.random() * 100);
              embed.fields = [];
-              if(amount>=40)
+              if(amount>=35)
                 {
                   card2="💯"
                 }
@@ -77,7 +77,7 @@ exports.execute = async (client, message, args) => {
            setTimeout(() => {
             let amount = Math.floor(Math.random() * 100);
              embed.fields = [];
-              if(amount>=50)
+              if(amount>=40)
                 {
                   card3="💯"
                 }
@@ -107,13 +107,13 @@ exports.execute = async (client, message, args) => {
        //  embed.setAuthor(`sa`)
           embed.setFooter(`Game Finished`)
          return msg.edit(embed);
-              }, 4500);
+              }, 4000);
         } );
     }
     }  };
 
 exports.help = {
     name: "slots",
-    aliases: ["slot","SLOTS","SLOT"],
+    aliases: ["slot"],
     usage: "slots <amount>"
 }
