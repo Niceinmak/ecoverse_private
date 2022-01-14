@@ -22,7 +22,7 @@ exports.execute = async (client, message, args) => {
      if (!userdata || isNaN(userdata)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
   else{
     if(userdata>authordata.amount || userdata<1) return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);
-    if(amount3!="green" && amount3!="red" && amount3!="blue") message.channel.send(`** ⛔${message.author.tag} | You chose the **wrong card** :c`);
+    if(amount3!="green" && amount3!="red" && amount3!="blue") return message.channel.send(`** ⛔${message.author.tag} | You chose the **wrong card** :c`);
     if((amount3)=="green") 
     {
       userdata2="🟢"
