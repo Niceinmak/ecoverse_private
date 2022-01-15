@@ -20,6 +20,7 @@ exports.execute = async (client, message, args) => {
       if(userdata=="all") userdata=authordata.amount;
   if(userdata=="half") userdata=authordata.amount/2 , userdata=parseInt(userdata);
   if(userdata>50000) userdata=50000;
+  let userdata=String(userdata).replace(/(.)(?=(\d{3})+$)/g,'$1,')
      if (!userdata || isNaN(userdata)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
   else{
     if(userdata>authordata.amount || userdata<1) return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);
