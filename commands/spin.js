@@ -43,15 +43,15 @@ exports.execute = async (client, message, args) => {
   .setTitle(`**${message.author.tag} |  Played Roulette With ${userdata}!\n-------------------------------------**`)
   .setColor("GRAY")
   .setFooter(`Roulette`)
-  .setDescription(`**🟢 |Luck 42,5 , Earning:3X\n🔴 |Luck 42,5 , Earning:3X\n🔷 |Luck 15,0 , Earning:5X \n------------------------------------------\n The Wheel is Spinning.\n You Played:${userdata2}**`)
+  .setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning.\n You Played:${userdata2}**`)
   
   return message.channel.send(embed).then(async msg => {
       setTimeout(() => {
-         embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:5X \n------------------------------------------\n The Wheel is Spinning..\n You Played:${userdata2}**`)
+         embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning..\n You Played:${userdata2}**`)
         return msg.edit(embed)
         }, 1000);
     setTimeout(() => {
-         embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:5X \n------------------------------------------\n The Wheel is Spinning...\n You Played:${userdata2}**`)
+         embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning...\n You Played:${userdata2}**`)
         return msg.edit(embed)
         }, 2000); 
        setTimeout(() => {
