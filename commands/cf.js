@@ -13,12 +13,14 @@ exports.execute = async (client, message, args) => {
         if (amount3=="tails" || amount3=="heads")
  {  if(amount5=="all") amount5=authordata.amount;
     if(amount5=="half") amount5=authordata.amount/2 , amount5=parseInt(amount5);
+    if(amount5>50000) amount5=50000;
     else if (!amount5 || isNaN(amount5)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
     if(amount5>authordata.amount || amount5<1)  return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);
     else
     {
     if(amount5=="all") amount5=authordata.amount;
       if(amount5=="half") amount5=authordata.amount/2 , amount5=parseInt(amount5);
+      if(amount5>50000) amount5=50000;
     else if (!amount5 || isNaN(amount5)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
                 message.channel.send(`**${message.author.tag} | ** spent **${amount5}**💶 and chose **${amount3}**\n The coin spins.🪙`).then(async msg => {
         setTimeout(() => {
@@ -45,6 +47,7 @@ exports.execute = async (client, message, args) => {
   //--------------------------------------------
     if(amount3=="all") amount3=authordata.amount;
     if(amount3=="half") amount3=authordata.amount/2 , amount3=parseInt(amount3);
+    if(amount3>50000) amount3=50000;
     if (!amount3 || isNaN(amount3)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
   else{
     if(amount3>authordata.amount || amount3<1)  return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);

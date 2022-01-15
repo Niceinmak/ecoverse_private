@@ -20,6 +20,7 @@ exports.execute = async (client, message, args) => {
   //--------------------------------------------
   if(amount3=="all") amount3=authordata.amount;
   if(amount3=="half") amount3=authordata.amount/2 , amount3=parseInt(amount3);
+  if(amount3>50000) amount3=50000;
     if (!amount3 || isNaN(amount3)) return message.channel.send(`** ⛔${message.author.tag} | ** Please specify a valid amount.`);
   else{
     if(amount3>authordata.amount || amount3<1)  return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);
