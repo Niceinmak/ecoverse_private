@@ -88,7 +88,7 @@ exports.execute = async (client, message, args) => {
       }
   //  economyusage+=` \`${client.prefix}${cmd.help.usage}\` `
     }); 
-  embed.setDescription(`Here is the list of commands!\n**For more info on a specific command, use** \`${client.prefix} help <command>\`
+  embed.setDescription(`Here is the list of commands!\n**For more info on a specific command, use** \`${client.prefix}help <command>\`
   
   **Games**💵\n${gamesname}   
   

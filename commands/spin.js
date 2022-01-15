@@ -47,11 +47,11 @@ exports.execute = async (client, message, args) => {
   
   return message.channel.send(embed).then(async msg => {
       setTimeout(() => {
-         embed.setDescription(`**🟢 |Luck 42,5 , Earning:3X\n🔴 |Luck 42,5 , Earning:3X\n🔷 |Luck 15,0 , Earning:5X \n------------------------------------------\n The Wheel is Spinning..\n You Played:${userdata2}**`)
+         embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:5X \n------------------------------------------\n The Wheel is Spinning..\n You Played:${userdata2}**`)
         return msg.edit(embed)
         }, 1000);
     setTimeout(() => {
-         embed.setDescription(`**🟢 |Luck 42,5 , Earning:3X\n🔴 |Luck 42,5 , Earning:3X\n🔷 |Luck 15,0 , Earning:5X \n------------------------------------------\n The Wheel is Spinning...\n You Played:${userdata2}**`)
+         embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:5X \n------------------------------------------\n The Wheel is Spinning...\n You Played:${userdata2}**`)
         return msg.edit(embed)
         }, 2000); 
        setTimeout(() => {
@@ -59,9 +59,9 @@ exports.execute = async (client, message, args) => {
            {
             if(amount4=="2")
                {
-                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata*5));
+                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata*3));
                  embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning...\n Congratulations, you won!\n Roulette:🔷\n You Played:${userdata2}**`)
-                 .setTitle(`**${message.author.tag} |  You Win ${userdata*5}!\n-------------------------------------**`)
+                 .setTitle(`**${message.author.tag} |  You Win ${userdata*3}!\n-------------------------------------**`)
                return msg.edit(embed)
                }
              else
@@ -76,9 +76,9 @@ exports.execute = async (client, message, args) => {
            {
                if(amount4=="1")
                {
-                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata)*3);
+                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata)*2);
                  embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning...\n Congratulations, you won!\n Roulette:🔴\n You Played:${userdata2}**`)
-                 .setTitle(`**${message.author.tag} |  You Win ${userdata*3}!\n-------------------------------------**`)
+                 .setTitle(`**${message.author.tag} |  You Win ${userdata*2}!\n-------------------------------------**`)
                return msg.edit(embed)
                }
              else
@@ -117,5 +117,5 @@ exports.execute = async (client, message, args) => {
 exports.help = {
     name: "spin",
     aliases: ["SPIN","roulette"],
-    usage: "spin <green,red,yellow> <amount>"
+    usage: "spin <green,red,blue> <amount>"
 }
