@@ -7,11 +7,11 @@ exports.execute = async (client, message, args) => {
     let amount = args[1];
     if (!amount || isNaN(amount)) return message.reply("Please specify a valid amount.");
     let data = client.eco.setMoney(user.id, parseInt(amount));
-    
+    let dataafterformat=String(data.after).replace(/(.)(?=(\d{3})+$)/g,'$1,')
     const embed = new MessageEmbed()
         .setTitle(`Money Updated!`)
         .addField(`User`, `<@${data.user}>`)
-        .addField(`Total Amount`, data.after)
+        .addField(`Total Amount`, `**${dataafterformat}**💶`)
         .setColor("RANDOM")
         .setThumbnail(user.displayAvatarURL)
         .setTimestamp();

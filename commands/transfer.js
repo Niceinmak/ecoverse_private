@@ -7,7 +7,8 @@ exports.execute = async (client, message, args) => {
   if(authordata.amount < amount) return message.channel.send('Looks like you don\'t have that much money') 
   if(message.author.id==member.id) return message.channel.send("You **can't** send money to yourself :D")
   await client.eco.transfer(message.author.id, member.id, amount) 
-  return message.channel.send(`You have successfully transferred 💶**${amount}** to ** ${member.user.tag}**.`)
+  let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+  return message.channel.send(`You have successfully transferred 💶**${amountformat}** to ** ${member.user.tag}**.`)
 }
 exports.help = {
   name: "transfer",
