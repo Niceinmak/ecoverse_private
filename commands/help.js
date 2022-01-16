@@ -38,7 +38,8 @@ exports.execute = async (client, message, args) => {
         "spin",
         "search",
         "slots",
-        "weekly"
+        "weekly",
+        "roll"
     ];
   let utilitycommands = [
         "prefix",
