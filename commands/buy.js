@@ -11,7 +11,7 @@ exports.execute = async (client, message, args) => {
   if (!item) return message.channel.send(`**${message.author.tag} | What are you trying to buy?**`);
   let hasItem = client.shop[item];
   if (!hasItem || hasItem == undefined)
-    return message.channel.send(`**${message.author.tag} | That item doesnt exists lol*`);
+    return message.channel.send(`**${message.author.tag} | That item doesnt exists lol**`);
    if (!count || isNaN(count))
     return message.channel.send(`**${message.author.tag} | The amount you type is not a number**`);
   let isBalanceEnough = userBalance.amount >= hasItem.cost*count;
