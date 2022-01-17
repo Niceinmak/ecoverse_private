@@ -31,32 +31,32 @@ exports.execute = async (client, message, args) => {
     if(amount4>authordata.amount || amount4<1)  return message.channel.send(`** ⛔${message.author.tag} | ** You don't have enough money`);
     else
     {
-               message.channel.send(`**🎲 | Niceinmak played roll:** \`${amount3}\`\n**Number on the dice:**`).then(async msg => {
+               message.channel.send(`**🎲 | ${user1.username} played roll:** \`${amount3}\`\n**Number on the dice:**`).then(async msg => {
                  let randomnumber=numbers[Math.floor(Math.random() * numbers.length)]
                 setTimeout(() => {
   // embed.setAuthor(`as`)
-          msg.edit(`**🎲 | Niceinmak played roll:** \`${amount3}\`\n**Number on the dice:**\`.\``)
+          msg.edit(`**🎲 | ${user1.username} played roll:** \`${amount3}\`\n**Number on the dice:**\`.\``)
                    }, 500);
                 setTimeout(() => {
        //  embed.setAuthor(`sa`)
-          msg.edit(`**🎲 | Niceinmak played roll:** \`${amount3}\`\n**Number on the dice:**\`..\``)
+          msg.edit(`**🎲 | ${user1.username} played roll:** \`${amount3}\`\n**Number on the dice:**\`..\``)
               }, 1000);
             setTimeout(() => {
-             msg.edit(`**🎲 | Niceinmak played roll:** \`${amount3}\`\n**Number on the dice:**\`...\``)
+             msg.edit(`**🎲 | ${user1.username} played roll:** \`${amount3}\`\n**Number on the dice:**\`...\``)
               }, 2000);
           setTimeout(() => {
-            msg.edit(`**🎲 | Niceinmak played roll:** \`${amount3}\`\n**Number on the dice:**\`${randomnumber}\``)
+            msg.edit(`**🎲 | ${user1.username} played roll:** \`${amount3}\`\n**Number on the dice:**\`${randomnumber}\``)
               }, 3000);
            setTimeout(() => {
              if(amount3==randomnumber)
                 {
-                  msg.edit(`**🎲 | Niceinmak played roll:** \`${amount3}\`\n**Number on the dice:**\`${randomnumber}\`\n\`Congrulations,You Win ${amount4*3}💶!\``)
+                  msg.edit(`**🎲 | ${user1.username} played roll:** \`${amount3}\`\n**Number on the dice:**\`${randomnumber}\`\n\`Congrulations,You Win ${amount4*3}💶!\``)
                   let data = client.eco.addMoney(message.author.id, parseInt(amount4*3));
                 }
              else
                {
                  let data = client.eco.removeMoney(message.author.id, parseInt(amount4));
-                 msg.edit(`**🎲 | Niceinmak played roll:** \`${amount3}\`\n**Number on the dice:**\`${randomnumber}\`\n\`Sorry,You Lost ${amount4}💶\``)
+                 msg.edit(`**🎲 | ${user1.username} played roll:** \`${amount3}\`\n**Number on the dice:**\`${randomnumber}\`\n\`Sorry,You Lost ${amount4}💶\``)
                }
               }, 4000);
         } );
