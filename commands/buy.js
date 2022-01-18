@@ -17,7 +17,9 @@ exports.execute = async (client, message, args) => {
   let isBalanceEnough = userBalance.amount >= hasItem.cost*count;
   if (!isBalanceEnough)
     {
-    return message.channel.send(`**${message.author.tag} | Your balance is insufficient. You need ${hasItem.cost*count}💶 to buy this item.Your current money ${userBalance.amount}💶**`);
+      let hasitemformat=String(hasItem.cost*count).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+      let userbalanceformat=String(userBalance.amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+    return message.channel.send(`**${message.author.tag} | Your balance is insufficient. You need ${hasitemformat}💶 to buy this item.Your current money ${userbalanceformat}💶**`);
     }
   if(count<1) return message.reply(`**Remember, you cannot get less than 1 item.**`);
   let buy = client.eco.removeMoney(message.author.id, hasItem.cost*count);
@@ -29,8 +31,9 @@ exports.execute = async (client, message, args) => {
  client.db.push(`items_${message.author.id}`, itemStruct);
     count2++;
   }
+  let hasitemformat2=String(hasItem.cost*(count2-1)).replace(/(.)(?=(\d{3})+$)/g,'$1,')
   return message.channel.send(
-    `**${message.author.tag} | You purchased ${item} x${count2-1} for ${hasItem.cost*(count2-1)}💶**`
+    `**${message.author.tag} | You purchased ${item} x${count2-1} for ${hasitemformat2}💶**`
   );
 };
 

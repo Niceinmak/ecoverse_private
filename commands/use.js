@@ -113,9 +113,9 @@ exports.execute = async (client, message, args) => {
      quantity+=arrayToObject[k]
   );
    //  let sell = client.eco.addMoney(message.author.id, 1);
-
+   let totalcashformat=String(totalcash).replace(/(.)(?=(\d{3})+$)/g,'$1,')
       const  result2 = Object.keys(arrayToObject).find(k =>
-    message.channel.send(`${message.author.tag} | Congrulations! You selled**${totalcash2}** cases and earn **${totalcash}**💶!`)
+    message.channel.send(`${message.author.tag} | Congrulations! You selled**${totalcash2}** cases and earn **${totalcashformat}**💶!`)
   );
    
 };
