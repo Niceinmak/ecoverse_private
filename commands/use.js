@@ -13,7 +13,6 @@ exports.execute = async (client, message, args) => {
   let totalcash=0
   let totalcash2=" "
   //------------------------------------------
-  if (playtime.onCooldown) return message.reply(`**Take it slow,wait ${playtime.time.seconds} more seconds**`);
     const x = client.db.get(`items_${message.author.id}`);
     if (!x) {
     return message.channel.send(`${message.author.tag} | Item not found for sale`);
