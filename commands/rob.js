@@ -3,8 +3,8 @@ exports.execute = async (client, message, args) => {
   let authordata = client.eco.fetchMoney(message.author.id) 
   let authordataname = client.eco.fetchMoney(message.author.id) 
   let targetname=args[0]
-  let targetBalance = client.eco.fetchMoney(target.id);
   if(!target) return message.reply("Who are you trying to rob?")
+  let targetBalance = client.eco.fetchMoney(target.id);
   let messages = [
     `You tripped while trying to rob ${target} and got caught!`,
     `Getting sneaky eh? ${target} called the cops on you!`,

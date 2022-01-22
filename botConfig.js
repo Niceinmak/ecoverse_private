@@ -1,8 +1,8 @@
 module.exports = {
-    prefix: "f ",
+    prefix: "q ",
     admins: [
         "405247101442719764"
 ],
-    debug: true,
+    debug: false,
     countChannel: "countChannelID"
 };
