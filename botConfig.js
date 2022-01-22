@@ -1,5 +1,5 @@
 module.exports = {
-    prefix: "q ",
+    prefix: "f ",
     admins: [
         "405247101442719764"
 ],
