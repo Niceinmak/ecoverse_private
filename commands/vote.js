@@ -7,7 +7,7 @@ const dbl = new DBL(process.env.TOPGG_TOKEN, + client);
 module.exports.execute = async (client, message, args) => {
   let user = message.mentions.users.first() || message.author;
     
-  const timeout = 5000;
+  const timeout = 86400000;
   const cooldown = await db.fetch(`cooldown_Command-Name_${message.author.id}`);
     let amount = Math.floor(Math.random() * 5000) + 300;
     let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
