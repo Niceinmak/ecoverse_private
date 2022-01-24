@@ -13,7 +13,7 @@ module.exports.execute = async (client, message, args) => {
   const cooldown = await db.fetch(`cooldown_Command-Name_${message.author.id}`);
     let amount = Math.floor(Math.random() * 5000) + 300;
     let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
-      dbl.hasVoted("message.author.id").then(voted => {
+      dbl.hasVoted(message.author.id).then(voted => {
     if (voted){
         	if (cooldown !== null && timeout - (Date.now() - cooldown) > 0) {
 		const time = ms(timeout - (Date.now() - cooldown));
