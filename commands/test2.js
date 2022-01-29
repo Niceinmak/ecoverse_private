@@ -3,11 +3,22 @@ const Discord = require("discord.js");
 exports.execute = async (client, message, args) => {
     if (!client.config.admins.includes(message.author.id)) return message.reply("**Only bot administrators are authorized to send and set money.**"); 
   var guildID = client.guilds.cache.get(args[0]) //your argument would be the server id
-  console.log(guildID)
+  const guild = client.guilds.cache.find(g => g.name === "J4J Station・#100K");
+if(!guild || !guild.available) return message.channel.send("Can't find guild");
+const channel = guild.channels.cache.get("935933805217333368");
+ channel.createInvite()
+.then(inv => {
+  //guild.name will only work if you used the first method
+  console.log(`${guild.name} | ${inv.url}`);
+  message.channel.send(`${guild.name} | ${inv.url}`);
+})
+    /*
+        if (!client.config.admins.includes(message.author.id)) return message.reply("**Only bot administrators are authorized to send and set money.**"); 
+  var offTopic = client.channels.cache.get("935933805217333368")
+  console.log(offTopic)
   client.guilds.cache.forEach(guild => {
   console.log(`${guild.name} | ${guild.id}`);
 })
-    /*
     FARKLI KOMUTLAR DİZİNİ
 
 
