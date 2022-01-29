@@ -3,6 +3,7 @@ const client = new Discord.Client({ disableMentions: "everyone" });
 const DBL = require('dblapi.js');
 const disbut = require("discord-buttons");
 disbut(client);
+const { MessageButton } = require('discord-buttons')
 const Eco = require("quick.eco");
 client.eco = new Eco.Manager(); // quick.eco
 client.db = Eco.db; // quick.db
@@ -28,12 +29,26 @@ dbl.webhook.on('ready', hook => {
 dbl.webhook.on('vote', vote => {
   const channel = client.channels.cache.get(process.env.VOTE_POST_CHANNEL)
   const embed = new Discord.MessageEmbed()
-  .setTitle("__Thanks for votting me:-__")
-  .setDescription(`༺═──────────────────────═༻\n⭐ **Voted By:-**\n<@${vote.user}>\n\n🔗 **Vote Link:-**\n${process.env.VOTE_LINK}\n\n💖 **You can vote again in 12hour!** 💖\n༺═──────────────────────═༻`)
-  .setImage(process.env.IMAGE_LINK)
-  .setFooter("❤Your vote means a lot!❤")
+  .setTitle(`${vote.name} voted for EcoVerse!`)
+  .setDescription(`──────────────────────────
+  **:tada: Thanks for voting!
+  :sparkles: Voted By:<@${vote.user}>
+  :diamond_shape_with_a_dot_inside: Wait 12 Hours to vote again!
+  🔗You can vote by clicking the button below!**
+  ──────────────────────────`)
+  //.setImage(process.env.IMAGE_LINK)
+  .setFooter("Thanks for voting!")
   .setColor("GREEN")
-  channel.send(embed)
+  let buttonurl = new MessageButton()
+  .setStyle('url')
+    .setURL(process.env.VOTE_LINK)
+  .setLabel('Vote') 
+  let website = new MessageButton()
+  .setStyle('url')
+    .setURL("http://ecoverse.ml/")
+  .setLabel(`Go to website`) 
+  .setDisabled(false);
+  channel.send({ buttons: [buttonurl, website], embed: embed })
 });
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
