@@ -1,7 +1,14 @@
 const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
-client.guilds.cache.forEach(guild => {
+    if (!client.config.admins.includes(message.author.id)) return message.reply("**Only bot administrators are authorized to send and set money.**"); 
+    var guildID = client.guilds.cache.get(args[0]) //your argument would be the server id
+    if(guildID!="undefined")
+      {
+        guildID.leave()
+      }
+    
+  client.guilds.cache.forEach(guild => {
   console.log(`${guild.name} | ${guild.id}`);
 })
     /*
