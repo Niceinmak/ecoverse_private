@@ -2,20 +2,26 @@ const { MessageEmbed } = require("discord.js");
 const Discord = require("discord.js");
 exports.execute = async (client, message, args) => {
     if (!client.config.admins.includes(message.author.id)) return message.reply("**Only bot administrators are authorized to send and set money.**"); 
-  var guildID = client.guilds.cache.get(args[0]) //your argument would be the server id
-  const guild = client.guilds.cache.find(g => g.name === "J4J Station・#100K");
+  const guild = client.guilds.cache.find(g => g.name === "DESTROY TEAM");
+  console.log(guild)
 if(!guild || !guild.available) return message.channel.send("Can't find guild");
-const channel = guild.channels.cache.get("935933805217333368");
- channel.createInvite()
+const channel = guild.channels.cache.get("881043301879402547");
+  channel.createInvite()
 .then(inv => {
   //guild.name will only work if you used the first method
   console.log(`${guild.name} | ${inv.url}`);
   message.channel.send(`${guild.name} | ${inv.url}`);
 })
+  client.guilds.cache.forEach(guild => {
+  console.log(`${guild.name} | ${guild.id}`);
+})
     /*
-        if (!client.config.admins.includes(message.author.id)) return message.reply("**Only bot administrators are authorized to send and set money.**"); 
-  var offTopic = client.channels.cache.get("935933805217333368")
-  console.log(offTopic)
+    const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
+exports.execute = async (client, message, args) => {
+    if (!client.config.admins.includes(message.author.id)) return message.reply("**Only bot administrators are authorized to send and set money.**"); 
+  var guildID = client.guilds.cache.get(args[0]) //your argument would be the server id
+  guildID.leave()
   client.guilds.cache.forEach(guild => {
   console.log(`${guild.name} | ${guild.id}`);
 })
