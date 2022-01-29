@@ -29,7 +29,7 @@ dbl.webhook.on('ready', hook => {
 dbl.webhook.on('vote', vote => {
   const channel = client.channels.cache.get(process.env.VOTE_POST_CHANNEL)
   const embed = new Discord.MessageEmbed()
-  .setTitle(`${vote.name} voted for EcoVerse!`)
+  .setTitle(`Thanks for voting!`)
   .setDescription(`──────────────────────────
   **:tada: Thanks for voting!
   :sparkles: Voted By:<@${vote.user}>
