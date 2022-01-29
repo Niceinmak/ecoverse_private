@@ -45,7 +45,7 @@ exports.execute = async (client, message, args) => {
         "prefix",
         "ping",
         "uptime",
-        "privacy",
+        "termsofservice",
         "supportserver"
     ];
   let onlyadminscommands = [

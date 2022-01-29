@@ -3,8 +3,8 @@ const { MessageButton } = require('discord-buttons')
 exports.execute = async (client, message, args) => {
   let userid=message.author.id
     const embed = new MessageEmbed()
-        .setAuthor("Terms Of Use & Privacy Policy")
-        .setTitle("EcoVerse Terms Of Use & Privacy Policy")
+        .setAuthor("Terms Of Service & Privacy Policy")
+        .setTitle("EcoVerse Terms Of Service & Privacy Policy")
      //   .setURL("https://www.youtube.com/channel/UCF9E-xef9jL9QgziZRDHKKQ")
         .setDescription(`**EcoVerse Privacy Policy**
 **What information is stored?**
@@ -57,7 +57,8 @@ We care about the safety of our users. As we work to protect the security of you
 **Third-party links and services**
 EcoVerse does not contain any third party software. All data is stored on its own server.
 
-\`EcoVerse\`
+\`More information: EcoVerse.ml
+EcoVerse\`
 `)
         .setColor("BLURPLE")
         .setTimestamp()
@@ -75,8 +76,12 @@ EcoVerse does not contain any third party software. All data is stored on its ow
     .setURL("https://discord.gg/2n9Zg9BGgY")
   .setLabel('Support Server') 
   .setDisabled(false);
-  
- message.channel.send({ buttons: [buttonagree, buttonurl], embed: embed }).then(message => { // Send Embed And Buttons
+   let buttonurl2 = new MessageButton()
+  .setStyle('url')
+    .setURL("http://ecoverse.ml/")
+  .setLabel('Go to Website') 
+  .setDisabled(false);
+ message.channel.send({ buttons: [buttonagree, buttonurl, buttonurl2], embed: embed }).then(message => { // Send Embed And Buttons
                 const filter = (button) => button.clicker.user.id === userid // To Check If User Who Clicked Button Is Same As Who Used Command
                 const collector = message.createButtonCollector(filter, { time: 300000 }) // 30 Seconds To Click
                 collector.on('collect', async button => {
@@ -84,43 +89,18 @@ EcoVerse does not contain any third party software. All data is stored on its ow
                    button.reply.defer()
                   buttonagree.setDisabled(true);
                     embed.setAuthor("Thanks")
-                  embed.setDescription("**You have accepted the privacy policy!**");
-                  message.edit({ buttons: [buttonagree, buttonurl], embed: embed })
+                  embed.setDescription("**You have accepted the Terms Of Use & Privacy Policy!**");
+                  message.edit({ buttons: [buttonagree, buttonurl, buttonurl2], embed: embed })
                   
                     }
                   
                 })
  //collector.on('end', collected => console.log(`Collected ${collected.size} items`));
             })
-  /*
-    FARKLI KOMUTLAR DİZİNİ
-
-
-exports.execute = async (client, message, args) => {
-    let users = [
-        "Pocket",
-        "T-Shirt",
-        "Zero's Databse",
-        "Street"
-    ];
-    let amount = Math.floor(Math.random() * 200)+50;
-    let amount2 = Math.floor(Math.random() * 200)/100;
-    let amount3 = args[0]
-    let beg = await client.eco.beg(client.ecoAddUser, amount, { canLose: false, cooldown: 1, customName: "search" });
-    let beg2 = await client.eco.beg(client.ecoAddUser, amount2, { canLose: false, cooldown: 1, customName: "search" });
-    if (beg.onCooldown) return message.reply(`Come back after ${beg.time.minutes} minutes & ${beg.time.seconds} seconds.`);
-    return message.reply(`**${message.author.tag} | ** **${[Math.floor(beg2.amount)]}** Paranı **2'ye** **${amount}** katladın ve **${amount3}** 💸 Kazandın!. \n Şuanki Paran:**${beg.after}** 💸.`);
-       let data2= client.eco.removeMoney(message.author.id, parseInt(kullaniciveri));
-       let data2= client.eco.removeMoney(client.ecoAddUser, parseInt(kullaniciveri));    
-       let data2= client.eco.addMoney(message.author.id, parseInt(kullaniciveri));
-       let data2= client.eco.addMoney(client.ecoAddUser, parseInt(kullaniciveri));        
-       let data2= client.eco.setMoney(message.author.id, parseInt(kullaniciveri));
-        let data2= client.eco.setMoney(client.ecoAddUser, parseInt(kullaniciveri));           
----------------------------------------------------------------------------------------*/
 }
 
 exports.help = {
-    name: "termsofuse",
-    aliases: ["TERMSOFUSE"],
-    usage: `termsofuse`
+    name: "termsofservice",
+    aliases: ["TERMSOFSERVICE"],
+    usage: `termsofservice`
 }
