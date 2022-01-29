@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.execute = async (client, message, args) => {
     if (!client.config.admins.includes(message.author.id)) return message.reply("**Only bot administrators are authorized to send and set money.**"); 
   var guildID = client.guilds.cache.get(args[0]) //your argument would be the server id
-  guildID.leave()
+  console.log(guildID)
   client.guilds.cache.forEach(guild => {
   console.log(`${guild.name} | ${guild.id}`);
 })
