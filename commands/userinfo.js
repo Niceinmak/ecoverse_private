@@ -1,24 +1,15 @@
-const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
-const client = new Discord.Client()
-let db = require('quick.db');
-const DBL = require("dblapi.js");
-const dbl = new DBL(process.env.TOPGG_TOKEN, + client);
+const moment = require("moment");
 exports.execute = async (client, message, args) => {
   const user = message.mentions.users.first() || message.author;
   let userBalance = client.eco.fetchMoney(user.id);
   let userBalanceformat=String(userBalance.amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
   let items=0
+  let created=moment(new Date(user.createdTimestamp)).format("DD/MM/YY")
+  let admin=``
+  if (!client.config.admins.includes(user.id)) admin=`No`
+  else admin=`Yes`
   let itemsname=``
-  let votedtext=`none`
-  dbl.hasVoted(user.id).then(voted => {
-    if (voted){
-      votedtext=`${user.username} vote available :ballot_box_with_check: `
-    }
-    else if (!voted){
-      votedtext=`**${user.username} has voted today**`
-    }
-    })
    const x = client.db.get(`items_${user.id}`);
   if (!x) {
     items=0
@@ -41,19 +32,15 @@ const Embed1 = new MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle(user.username)
 	.setDescription(`**Total Cash\n${userBalanceformat}💶\n\nTotal Item:${items} **`)
-	.setThumbnail(message.author.displayAvatarURL({ format: 'png' }))
+	.setThumbnail(user.displayAvatarURL({ format: 'png' }))
 	.addFields(
     { name: '**Money**', value: `**User: ${user.username}\nMoney: ${userBalanceformat}💶\nPosition: ${userBalance.position}**` },
 		{ name: '**Items**', value: `${itemsname}` },
-    { name: '**Items**', value: `${votedtext}` },
 		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'User ID', value: user.id, inline: true },
+    { name: 'Created Account', value: created, inline: true },
+    { name: 'Admin?', value: admin, inline: true },
 	)
-	.addField('Inline field title', 'Some value here', true)
-	.setImage()
-	.setTimestamp()
-	.setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
 message.channel.send(Embed1);
   
@@ -62,5 +49,5 @@ message.channel.send(Embed1);
 exports.help = {
     name: "userinfo",
     aliases: ["USERINFO"],
-    usage: `userinfo`
+    usage: `userinfo <name>`
 }
