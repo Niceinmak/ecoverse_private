@@ -5,9 +5,8 @@ exports.execute = async (client, message, args) => {
   let content = "";
   
   for (var i in items) {
-    content += `${items[i]} - 💶 ${client.shop[items[i]].cost}\n`
+    content += `${items[i]} - 💶 **${ String(client.shop[items[i]].cost).replace(/(.)(?=(\d{3})+$)/g,'$1,')}**\n`
   }
-  
   let embed = new MessageEmbed()
   .setTitle("Store")
   .setDescription(content)

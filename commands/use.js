@@ -40,7 +40,7 @@ exports.execute = async (client, message, args) => {
       count3=agr6;
   if(agr1=="common.case")
     {
-        randomcash = Math.floor(Math.random() * 200);
+        randomcash = Math.floor(Math.random() * 20000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr2);
   totalcash+=randomcash*agr2
       totalcash2+=` ${agr1},`
@@ -48,14 +48,14 @@ exports.execute = async (client, message, args) => {
     }
   if(agr1=="rare.case")
     {
-        randomcash = Math.floor(Math.random() * 2000);
+        randomcash = Math.floor(Math.random() * 2000000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr2);
   totalcash+=randomcash*agr2
      totalcash2+=` ${agr1},`
     }
     if(agr1=="epic.case")
     {
-        randomcash = Math.floor(Math.random() * 20000);
+        randomcash = Math.floor(Math.random() * 2000000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr2);
   totalcash+=randomcash*agr2
      totalcash2+=` ${agr1},`
@@ -64,21 +64,21 @@ exports.execute = async (client, message, args) => {
     {
        if(agr3=="common.case")
     {
-        randomcash = Math.floor(Math.random() * 200);
+        randomcash = Math.floor(Math.random() * 20000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr4);
   totalcash+=randomcash*agr4
      totalcash2+=` ${agr3},`
     }
   if(agr3=="rare.case")
     {
-        randomcash = Math.floor(Math.random() * 2000);
+        randomcash = Math.floor(Math.random() * 2000000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr4);
   totalcash+=randomcash*agr4
     totalcash2+=` ${agr3},`
     }
     if(agr3=="epic.case")
     {
-        randomcash = Math.floor(Math.random() * 20000);
+        randomcash = Math.floor(Math.random() * 2000000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr4);
   totalcash+=randomcash*agr4
      totalcash2+=` ${agr3},`
@@ -88,21 +88,21 @@ exports.execute = async (client, message, args) => {
     {
     if(agr5=="common.case")
     {
-        randomcash = Math.floor(Math.random() * 200);
+        randomcash = Math.floor(Math.random() * 20000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr6);
   totalcash+=randomcash*agr6
      totalcash2+=` ${agr5},`
     }
   if(agr5=="rare.case")
     {
-        randomcash = Math.floor(Math.random() * 2000);
+        randomcash = Math.floor(Math.random() * 2000000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr6);
   totalcash+=randomcash*agr6
       totalcash2+=` ${agr5},`
     }
     if(agr5=="epic.case")
     {
-        randomcash = Math.floor(Math.random() * 20000);
+        randomcash = Math.floor(Math.random() * 2000000);
   let sell = client.eco.addMoney(message.author.id, randomcash*agr6);
   totalcash+=randomcash*agr6
       totalcash2+=` ${agr5},`

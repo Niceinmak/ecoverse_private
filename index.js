@@ -12,13 +12,13 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.shop = {
   "common.case": {
-    cost: 100,
+    cost: 10000,
   },
   "rare.case": {
-    cost: 1000,
+    cost: 100000,
   },
   "epic.case": {
-    cost: 10000,
+    cost: 1000000,
   },
 };
 const fs = require("fs");

@@ -12,6 +12,7 @@ exports.execute = async (client, message, args) => {
   let count = args[1];
   let count2=1;
   if(count==null) count=1;
+  if (if) return message.channel.send(`**\`${message.author.tag}\` | You cannot get more than 100 crates at a time.**`);
  if (count>100) return message.channel.send(`**\`${message.author.tag}\` | You cannot get more than 100 crates at a time.**`);
   if (!item) return message.channel.send(`**${message.author.tag} | What are you trying to buy?**`);
   let hasItem = client.shop[item];
