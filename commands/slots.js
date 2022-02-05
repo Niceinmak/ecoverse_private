@@ -1,4 +1,3 @@
-
 const { MessageEmbed } = require("discord.js");
 exports.execute = async (client, message, args) => {
         let emojies = [

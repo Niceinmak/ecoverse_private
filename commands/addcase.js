@@ -24,7 +24,7 @@ exports.execute = async (client, message, args) => {
   client.db.push(`items_${user.id}`, itemStruct);
 }
   return message.channel.send(
-    `${message.author.tag} | ${user.username} was given **${item} x${count2-1}**`
+    `**${message.author.tag} | ${user.username}** was given **${item} x${count2-1}**`
   );
 }
 
