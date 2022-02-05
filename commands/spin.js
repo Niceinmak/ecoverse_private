@@ -15,8 +15,8 @@ exports.execute = async (client, message, args) => {
     let authordata = client.eco.fetchMoney(message.author.id) 
     let timecooldown = Math.floor(Math.random() * 200)+50;
         let playtime = await client.eco.work(client.ecoAddUser, timecooldown,{ canLose: true, cooldown: 5000, customName: "search" });
-  let data2= client.eco.removeMoney(message.author.id, parseInt(timecooldown));
     if (playtime.onCooldown) return message.reply(`**Take it slow,wait ${playtime.time.seconds} more seconds**`);
+  let data2= client.eco.removeMoney(message.author.id, parseInt(timecooldown));
       if(userdata=="all") userdata=authordata.amount;
   if(userdata=="half") userdata=authordata.amount/2 , userdata=parseInt(userdata);
   if(userdata>50000) userdata=50000;
