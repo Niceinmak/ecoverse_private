@@ -5,7 +5,7 @@ exports.execute = async (client, message, args) => {
         .setTitle(`Website link is here!`)
       let website = new MessageButton()
   .setStyle('url')
-    .setURL("http://ecoverse.ml/")
+    .setURL("https://torch-sedate-brow.glitch.me/")
   .setLabel(`Go to website`) 
   .setDisabled(false);
   message.channel.send({ buttons: [website], embed: embed })
