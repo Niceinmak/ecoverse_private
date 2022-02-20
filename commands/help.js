@@ -38,6 +38,7 @@ exports.execute = async (client, message, args) => {
     ];
     let gamescommands = [
         "cf",
+        "bj",
         "rob",
         "beg",
         "daily",
