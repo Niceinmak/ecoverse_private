@@ -16,7 +16,7 @@ value = value.toString().slice(0,3);
   client.eco.addMoney(message.author.id, parseInt(amount*value));
   let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
   let amountformat2=String(amount*value).replace(/(.)(?=(\d{3})+$)/g,'$1,')
-  return message.channel.send(`**${amountformat} EcoCoin has been sold successfully! The money you earn is ${amountformat2}.**`)
+  return message.channel.send(`**${amountformat} EcoCoin has been sold successfully! The money you earn is ${amountformat2}💶.**`)
 });
 }
 exports.help = {
