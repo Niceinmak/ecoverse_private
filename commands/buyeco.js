@@ -8,8 +8,8 @@ exports.execute = async (client, message, args) => {
 value = value.toString().slice(0,3);
   let authordata = client.eco.fetchMoney(message.author.id) 
   let amount = args[0]
-  if(amount=="all") amount=authordata.amount
-  if(amount=="half") amount=authordata.amount/2
+  if(amount=="all") amount=parseInt((authordata.amount/value))
+  if(amount=="half") amount=parseInt((authordata.amount/value)/2)
   if (!amount || isNaN(amount) || amount<1) return message.reply(`**Please enter a valid amount to buy**`) 
   if(authordata.amount < amount*value) return message.reply(`**Looks like you don\'t have that much money,You need to have ${amount*value}💶 to do this operation.**`) 
   client.eco.removeMoney(message.author.id, parseInt(amount*value));
