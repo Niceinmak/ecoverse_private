@@ -450,6 +450,14 @@ function drawCard(who) {
   
   if(who=="d")
     {
+      if(randomcounter==1)
+        {
+        if(count<userpoint)
+    {
+     count=userpoint 
+    }  
+        }
+      
     namescardslistd+=`${count}${namescards[Math.floor(Math.random() * namescards.length)]},`
     dealerpoint+=count
       return [` [${dealerpoint}+?] \`${namescardslistd}\``];
