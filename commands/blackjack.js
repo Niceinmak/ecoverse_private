@@ -450,7 +450,7 @@ function drawCard(who) {
   
   if(who=="d")
     {
-      if(randomcounter==1)
+      if(randomcounter==2)
         {
         if(count<userpoint)
     {
