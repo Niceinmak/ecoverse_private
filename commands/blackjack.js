@@ -454,7 +454,7 @@ function drawCard(who) {
       randomcounter++
     }  
         }
-      
+      randomcounter++
     namescardslistd+=`${count}${namescards[Math.floor(Math.random() * namescards.length)]},`
     dealerpoint+=count
       return [` [${dealerpoint}+?] \`${namescardslistd}\``];
