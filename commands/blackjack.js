@@ -129,9 +129,8 @@ startbj()
 	)
    if(userpoint>21 && dealerpoint>21)
      {
-       embed.setAuthor(`You Lose`) 
-              embed.setFooter(`You lose ${amount3}`)
-          let data2= client.eco.removeMoney(messageid, parseInt(amount3));
+      embed.setFooter(`You both bust!`)
+          embed.setFooter(`You both bust!`)
      }
     else if(userpoint>21 && dealerpoint<=21)
       {
@@ -203,9 +202,8 @@ else
 	)
    if(userpoint>21 && dealerpoint>21)
      {
-       embed.setAuthor(`You Lose`) 
-              embed.setFooter(`You lose ${amount3}`)
-          let data2= client.eco.removeMoney(messageid, parseInt(amount3));
+       embed.setFooter(`You both bust!`)
+          embed.setFooter(`You both bust!`)
      }
     else if(userpoint>21 && dealerpoint<=21)
       {
@@ -284,9 +282,8 @@ else
 	)
    if(userpoint>21 && dealerpoint>21)
      {
-       embed.setAuthor(`You Lose`) 
-              embed.setFooter(`You lose ${amount3}`)
-          let data2= client.eco.removeMoney(messageid, parseInt(amount3));
+       embed.setFooter(`You both bust!`)
+          embed.setFooter(`You both bust!`)
      }
     else if(userpoint>21 && dealerpoint<=21)
       {
@@ -386,9 +383,8 @@ function stopbj(){
 	)
    if(userpoint>21 && dealerpoint>21)
      {
-       embed.setAuthor(`You Lose`) 
-              embed.setFooter(`You lose ${amount3}`)
-          let data2= client.eco.removeMoney(messageid, parseInt(amount3));
+       embed.setFooter(`You both bust!`)
+          embed.setFooter(`You both bust!`)
      }
     else if(userpoint>21 && dealerpoint<=21)
       {
@@ -455,6 +451,7 @@ function drawCard(who) {
         if(count<userpoint)
     {
      count=userpoint 
+      randomcounter++
     }  
         }
       
