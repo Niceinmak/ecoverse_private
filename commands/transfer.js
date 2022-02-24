@@ -29,7 +29,7 @@ exports.execute = async (client, message, args) => {
         const embed = new MessageEmbed()
         .setTitle(`Transfer Request`)
         .addField(`User`, `${message.author.tag} (${message.author.id})`)
-        .addField(`To`, `${member.tag} (${member.id})`)
+        .addField(`To`, `${member.user.tag} (${member.id})`)
         .addField(`Amount`, `${amount}`)
         .setColor("RANDOM")
         .setTimestamp();
