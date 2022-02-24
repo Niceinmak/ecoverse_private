@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { MessageButton } = require('discord-buttons')
 exports.execute = async (client, message, args) => {
   let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) 
-  let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) 
+  let authorid=message.author.id
   let authordata = client.eco.fetchMoney(message.author.id) 
   if (!member) return message.channel.send('Please mention the person or give their ID') 
   let amount = args[1]
@@ -17,7 +17,7 @@ exports.execute = async (client, message, args) => {
   let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
   return message.channel.send(`You have successfully transferred 💶**${amountformat}** to ** ${member.user.tag}**.`)
     }
-      else if(amount<30000)
+      else if(amount<20000)
              {
         await client.eco.transfer(message.author.id, member.id, amount) 
   let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
@@ -25,14 +25,13 @@ exports.execute = async (client, message, args) => {
          }
     else
       {
-        message.reply("Request sent, waiting for return...")
+        message.reply("Confirmation is required for some money transfers.Request sent, waiting for return...")
         const embed = new MessageEmbed()
         .setTitle(`Transfer Request`)
         .addField(`User`, `${message.author.tag} (${message.author.id})`)
-        .addField(`To`, `${user.tag} (${user.id})`)
+        .addField(`To`, `${member.tag} (${member.id})`)
         .addField(`Amount`, `${amount}`)
         .setColor("RANDOM")
-        .setThumbnail(user.displayAvatarURL)
         .setTimestamp();
           let buttonagree = new MessageButton()
   .setStyle('1')
@@ -59,7 +58,7 @@ exports.execute = async (client, message, args) => {
                   buttonagree.setDisabled(true);
                     buttondeny.setDisabled(true);
                   message.edit({ buttons: [buttonagree, buttondeny], embed: embed })
-                  await client.eco.transfer(message.author.id, member.id, amount) 
+                  await client.eco.transfer(authorid, member.id, amount) 
   let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
   return channel1.send(`You have successfully transferred 💶**${amountformat}** to ** ${member.user.tag}**.`)
                     }
