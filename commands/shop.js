@@ -5,7 +5,10 @@ exports.execute = async (client, message, args) => {
   let content = "";
   
   for (var i in items) {
+    if(items[i]=="epic.case" || items[i]=="rare.case" || items[i]=="common.case")
+      {
     content += `${items[i]} - 💶 **${ String(client.shop[items[i]].cost).replace(/(.)(?=(\d{3})+$)/g,'$1,')}**\n`
+      }
   }
   let embed = new MessageEmbed()
   .setTitle("Store")
