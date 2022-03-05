@@ -180,6 +180,6 @@ exports.execute = async (client, message, args) => {
 
 exports.help = {
     name: "help",
-    aliases: ["h","HELP"],
+    aliases: ["HELP"],
     usage: `help`
 }

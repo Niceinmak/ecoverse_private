@@ -38,9 +38,9 @@ exports.execute = async (client, message, args) => {
   count1=agr2;
       count2=agr4;
       count3=agr6;
-  if(agr1!="epic.case" && agr1!="rare.case" && agr1!="common.case" ) return message.channel.send(`**${message.author.tag} | What are you trying to buy?**`);
-  if(agr3!="epic.case" && agr3!="rare.case" && agr3!="common.case" ) return message.channel.send(`**${message.author.tag} | What are you trying to buy?**`);
-  if(agr5!="epic.case" && agr5!="rare.case" && agr5!="common.case" ) return message.channel.send(`**${message.author.tag} | What are you trying to buy?**`);
+  if(agr1!="epic.case" && agr1!="rare.case" && agr1!="common.case" ) return message.channel.send(`**${message.author.tag} | Item not found for sale**`);
+  if(agr3!="epic.case" && agr3!="rare.case" && agr3!="common.case" ) return message.channel.send(`**${message.author.tag} | Item not found for sale**`);
+  if(agr5!="epic.case" && agr5!="rare.case" && agr5!="common.case" ) return message.channel.send(`**${message.author.tag} | Item not found for sale**`);
   if(agr1=="common.case")
     {
         randomcash = Math.floor(Math.random() * 20000);
