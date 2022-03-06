@@ -31,6 +31,7 @@ exports.execute = async (client, message, args) => {
   let onlyadminsname=""
   let gamesname=""
   let bankname=""
+  let animalsname=""
   let ecocoinname=""
   let ecocoincommands = [
         "ecocoin",
@@ -39,6 +40,11 @@ exports.execute = async (client, message, args) => {
         "selleco",
     ];
   let bankcommands = [
+        "bank",
+        "deposit",
+        "withdraw",
+    ];
+  let animalscommands = [
         "bank",
         "deposit",
         "withdraw",
@@ -95,6 +101,13 @@ exports.execute = async (client, message, args) => {
         count++;
       }
     }
+    for (var i = 0; i < animalscommands.length; i++) {
+     if(cmd.help.name==animalscommands[i])
+      {
+        animalsname+=` \`${cmd.help.name}\` ` 
+        count++;
+      }
+    }
     for (var i = 0; i < ecocoincommands.length; i++) {
      if(cmd.help.name==ecocoincommands[i])
       {
@@ -127,6 +140,8 @@ exports.execute = async (client, message, args) => {
   **Games**💵\n${gamesname}   
   
   **Bank**🏦\n${bankname}   
+  
+  **Animals**🐍\n${bankname} 
   
   **EcoCoin🌿**\n${ecocoinname}   
   
