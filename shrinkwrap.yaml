@@ -1,5 +1,6 @@
 dependencies:
   '@top-gg/sdk': 3.1.3
+  any-length: 1.0.0
   btc-value: 4.0.0
   dblapi.js: 2.4.1
   discord-buttons: 4.0.0-deprecated
@@ -64,6 +65,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==
+  /any-length/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-PdLaNZSw2NVhpUdhR62zoTtqd/+vpXqAn4RKZJL8SCfb83NCeQ1Ir+kjoD2XxX/TS9wUY7qrCDroe1N1/uQ5RA==
   /aproba/1.2.0:
     dev: false
     resolution:
@@ -847,6 +852,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@top-gg/sdk': ^3.1.3
+  any-length: ^1.0.0
   btc-value: ^4.0.0
   dblapi.js: ^2.4.1
   discord-buttons: ^4.0.0-deprecated
