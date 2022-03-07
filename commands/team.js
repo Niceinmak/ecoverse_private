@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
+  let user = message.author;
   let userBalance = client.eco.fetchMoney(message.author.id);
   let itemname=" "
   let event = args[0];
@@ -222,7 +223,7 @@ exports.execute = async (client, message, args) => {
       count=tempcount2
       animal=true
       }
-    console.log(x1.name,item,tempcount2,count)
+    //console.log(x1.name,item,tempcount2,count)
     tempcount2++
     itemStruct[x.name] = (itemStruct[x.name] || 0) + 1;
     tempcount++
@@ -268,10 +269,54 @@ exports.execute = async (client, message, args) => {
     .setDescription(`**Team not found\nTo add animals to the team: \`q team add\`\nTo delete animal from team: \`q team remove\`**`)
   return message.channel.send(embed);
   }
-  const embed = new MessageEmbed()
+  let name=""
   const result = Object.keys(arrayToObject).map(k =>
-    embed.addField(`Name: ${k}`, `Quantity:**${arrayToObject[k]}**`, false)
+    name+=` ${k} ${arrayToObject[k]} `
+    //embed.addField(`Name: ${k}`, `Quantity:**${arrayToObject[k]}**`, false)
   );
+  var argString = name.substring(1).split(' ');
+  const embed = new MessageEmbed()
+  .setTitle(`${user.username}'s Team`)
+  .setDescription(`**For all animals: \`q zoo\`**`)
+  for(let l=0;l<7;l+=3)
+    {
+      for(let i=0;i<commonanimals.length;i++)
+    {
+      if(argString[l]==commonanimals[i])
+        {
+          embed.addField(`Rarities: <:common:949006743428542545>`, `Name: ${argString[l]} Quantity:\` ${argString[l+1]}\` `, false)
+        }
+    }
+  for(let i=0;i<uncommonanimals.length;i++)
+    {
+      if(argString[l]==uncommonanimals[i])
+        {
+          embed.addField(`Rarities: <:uncommon:949006765696098345>`, `Name: ${argString[l]} Quantity:\` ${argString[l+1]}\` `, false)
+        }
+    }
+  for(let i=0;i<rareanimals.length;i++)
+    {
+      if(argString[l]==rareanimals[i])
+        {
+         embed.addField(`Rarities: <:rare:949006777519837225>`, `Name: ${argString[l]} Quantity:\` ${argString[l+1]}\` `, false)
+        }
+    }
+  for(let i=0;i<epicanimals.length;i++)
+    {
+      if(argString[l]==epicanimals[i])
+        {
+         embed.addField(`Rarities: <:epic:949006791201652827>`, `Name: ${argString[l]} Quantity:\` ${argString[l+1]}\` `, false)
+        }
+    }
+  for(let i=0;i<legendaryanimals.length;i++)
+    {
+      if(argString[l]==legendaryanimals[i])
+        {
+         embed.addField(`Rarities: <:legendary:949006805646864404>`, `Name: ${argString[l]} Quantity:\` ${argString[l+1]}\` `, false)
+        }
+    }
+    }
+  
   return message.channel.send(embed);
  //   client.eco.addMoney(`${message.author.id}12`, parseInt(xp));
  // client.eco.addMoney(message.author.id, parseInt(xp));
