@@ -11,7 +11,7 @@ exports.execute = async (client, message, args) => {
   if(message.author.id==member.id) return message.channel.send("You **can't** send money to yourself :D")
   if (client.config.admins.includes(message.author.id))
     {
-     if(message.author.id=="405247101442719764")
+     if(message.author.id==process.env.OWNER_ID)
     {
       await client.eco.transfer(message.author.id, member.id, amount) 
   let amountformat=String(amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
@@ -50,7 +50,7 @@ exports.execute = async (client, message, args) => {
         const channel = client.channels.cache.get(process.env.REQUEST_CHANNEL)
         const channel1 = client.channels.cache.get(message.channel.id)
  channel.send({ buttons: [buttonagree, buttondeny], embed: embed }).then(message => { // Send Embed And Buttons
-                const filter = (button) => button.clicker.user.id === "405247101442719764" // To Check If User Who Clicked Button Is Same As Who Used Command
+                const filter = (button) => button.clicker.user.id === process.env.OWNER_ID // To Check If User Who Clicked Button Is Same As Who Used Command
                 const collector = message.createButtonCollector(filter, { time: 600000 }) // 30 Seconds To Click
                 collector.on('collect', async button => {
                   if(button.id === '1') { // If User Click Yes Button

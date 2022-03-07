@@ -6,7 +6,7 @@ exports.execute = async (client, message, args) => {
     if (!user) return message.channel.send("Please specify a user!");
     let amount = args[1];
     if (!amount || isNaN(amount)) return message.reply("Please specify a valid amount.");
-  if(message.author.id=="405247101442719764")
+  if(message.author.id==process.env.OWNER_ID)
     {
       let data = client.eco.addMoney(user.id, parseInt(amount));
   let dataformat=String(data.amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
@@ -48,7 +48,7 @@ exports.execute = async (client, message, args) => {
         const channel = client.channels.cache.get(process.env.REQUEST_CHANNEL)
         const channel1 = client.channels.cache.get(message.channel.id)
  channel.send({ buttons: [buttonagree, buttondeny], embed: embed }).then(message => { // Send Embed And Buttons
-                const filter = (button) => button.clicker.user.id === "405247101442719764" // To Check If User Who Clicked Button Is Same As Who Used Command
+                const filter = (button) => button.clicker.user.id === process.env.OWNER_ID // To Check If User Who Clicked Button Is Same As Who Used Command
                 const collector = message.createButtonCollector(filter, { time: 600000 }) // 30 Seconds To Click
                 collector.on('collect', async button => {
                   if(button.id === '1') { // If User Click Yes Button

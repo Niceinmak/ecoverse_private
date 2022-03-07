@@ -46,6 +46,7 @@ exports.execute = async (client, message, args) => {
     ];
   let animalscommands = [
         "zoo",
+        "team",
         "hunt",
         "sellanimals",
     ];
