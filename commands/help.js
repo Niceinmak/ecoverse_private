@@ -45,9 +45,9 @@ exports.execute = async (client, message, args) => {
         "withdraw",
     ];
   let animalscommands = [
-        "bank",
-        "deposit",
-        "withdraw",
+        "zoo",
+        "hunt",
+        "sellanimals",
     ];
     let gamescommands = [
         "cf",
@@ -141,7 +141,7 @@ exports.execute = async (client, message, args) => {
   
   **Bank**🏦\n${bankname}   
   
-  **Animals**🐍\n${bankname} 
+  **Animals**🐍\n${animalsname} 
   
   **EcoCoin🌿**\n${ecocoinname}   
   
