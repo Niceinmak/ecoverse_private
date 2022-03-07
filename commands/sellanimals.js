@@ -61,7 +61,6 @@ exports.execute = async (client, message, args) => {
   if(item=="dodo-1" || item=="dodo1" || item=="dodo") item="<:dodo:948264775639519232>"
   if(item=="trex-1" || item=="trex1" || item=="trex") item="<:trex1:948264765866786907>"
   if(item=="ant-1" || item=="ant1" || item=="ant") item="<:ant:948264757000040460>"
-  console.log(item)
   if(!item)
     {
     const embed = new MessageEmbed()
