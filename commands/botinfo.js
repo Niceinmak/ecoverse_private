@@ -7,7 +7,13 @@ const embed = new MessageEmbed()
         .setTitle(`Bot Info`)
        .addField(`Servers:`,serverformat)
        .addField(`Users:`,userformat)
+let servernames=""
+client.guilds.cache.forEach(guild => {
+  servernames+=`\`${guild.name} | ${guild.id}\`\n`
+})
+    embed.setDescription(`Server Names:\n${servernames}`)
   message.channel.send(embed);
+  
 }
 
 exports.help = {
