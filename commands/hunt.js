@@ -58,25 +58,25 @@ exports.execute = async (client, message, args) => {
   if (userBalance.amount < 3) return message.channel.send(`You found: **${fullname}** for ** ${fullcost}💶
 Gained ${xp}xp!**.`);
       let item = ""
-      if(lucky1<55)
+      if(lucky1<75)
         {
           client.eco.addMoney(`${message.author.id}12`, parseInt(commonxp));
           xp+=commonxp
   item = commonanimals[Math.floor(Math.random() * commonanimals.length)];
         }
-      else if(lucky1<65)
+      else if(lucky1<90)
         {
           client.eco.addMoney(`${message.author.id}12`, parseInt(uncommonxp));
           xp+=uncommonxp
   item = uncommonanimals[Math.floor(Math.random() * uncommonanimals.length)];
         }
-      else if(lucky1<75)
+      else if(lucky1<97)
         {
           client.eco.addMoney(`${message.author.id}12`, parseInt(rarexp));
           xp+=rarexp
   item = rareanimals[Math.floor(Math.random() * rareanimals.length)];
         }
-      else if(lucky1<90)
+      else if(lucky1<100)
         {
           client.eco.addMoney(`${message.author.id}12`, parseInt(epicxp));
           xp+=epicxp

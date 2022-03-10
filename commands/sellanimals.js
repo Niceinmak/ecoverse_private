@@ -78,11 +78,11 @@ exports.execute = async (client, message, args) => {
   let rarexp = Math.floor(Math.random() * 1000) + 1;
   let epicxp = Math.floor(Math.random() * 5000) + 1;
   let legendaryxp = Math.floor(Math.random() * 10000) + 1;
-  let commonmoney = Math.floor(Math.random() * 50) + 1;
-  let uncommonmoney = Math.floor(Math.random() * 100) + 1;
-  let raremoney = Math.floor(Math.random() * 500) + 1;
+  let commonmoney = Math.floor(Math.random() * 30) + 1;
+  let uncommonmoney = Math.floor(Math.random() * 50) + 1;
+  let raremoney = Math.floor(Math.random() * 100) + 1;
   let epicmoney = Math.floor(Math.random() * 1000) + 1;
-  let legendarymoney = Math.floor(Math.random() * 10000) + 1;
+  let legendarymoney = Math.floor(Math.random() * 100000) + 1;
   let counter=0
   if(item=="all")
     {
