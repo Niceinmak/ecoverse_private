@@ -33,6 +33,7 @@ exports.execute = async (client, message, args) => {
   let bankname=""
   let animalsname=""
   let ecocoinname=""
+  let funname=""
   let ecocoincommands = [
         "ecocoin",
         "ecoinv",
@@ -61,6 +62,18 @@ exports.execute = async (client, message, args) => {
         "slots",
         "weekly",
         "roll"
+    ];
+  let funcommands = [
+        "randommeme",
+        "advice",
+        "randomanime",
+        "randomfact",
+        "findnpm",
+        "asciiart",
+        "fakenitro",
+        "orangetext",
+        "kill",
+        "clap"
     ];
   let utilitycommands = [
         "prefix",
@@ -123,6 +136,13 @@ exports.execute = async (client, message, args) => {
         count++;
       }
     }
+    for (var i = 0; i < funcommands.length; i++) {
+     if(cmd.help.name==funcommands[i])
+      {
+         funname+=` \`${cmd.help.name}\` ` 
+        count++;
+      }
+    }
      for (var i = 0; i < onlyadminscommands.length; i++) {
      if(cmd.help.name==onlyadminscommands[i])
       {
@@ -144,9 +164,11 @@ exports.execute = async (client, message, args) => {
   
   **Animals**🐍\n${animalsname} 
   
-  **EcoCoin🌿**\n${ecocoinname}   
+  **EcoCoin**🌿\n${ecocoinname}   
   
-  **Economy💰**\n${economyname}
+  **Economy**💰\n${economyname}
+  
+  **Fun**🛹\n${funname}
   
   **Only Admins **🚫\n${onlyadminsname}
   
