@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-
+const anyLength = require('any-length');
 exports.execute = async (client, message, args) => {
   let timecooldown = Math.floor(Math.random() * 200)+50;
     let playtime = await client.eco.work(client.ecoAddUser, timecooldown,{cooldown: 10000});
@@ -69,7 +69,7 @@ exports.execute = async (client, message, args) => {
   .setThumbnail("https://i.imgur.com/r8EFIV8.png")
   return message.channel.send(embed);
     }
-  let xp=0
+       let xp=0
   let earnmoney=0
   var word = new Boolean(false)
   var animal = new Boolean(false)
@@ -83,6 +83,93 @@ exports.execute = async (client, message, args) => {
   let raremoney = Math.floor(Math.random() * 500) + 1;
   let epicmoney = Math.floor(Math.random() * 1000) + 1;
   let legendarymoney = Math.floor(Math.random() * 10000) + 1;
+  let counter=0
+  if(item=="all")
+    {
+      let x = client.db.get(`animals_${message.author.id}`);
+      console.log("t")
+      let items=``
+        const arrayToObject = x.reduce((itemStruct, x) => {
+     items+=x.name+` `
+     counter++
+    itemStruct[x.name] = (itemStruct[x.name] || 0) + 1;
+    return itemStruct;
+  }, {});
+      let itemslenght=(anyLength(items))-1
+      items="<"+items
+      var argString = items.slice(0,itemslenght).substring(1).split(' ');
+      console.log(itemslenght[0],counter)
+      console.log(items.slice(0,itemslenght));
+      for(let i=0;i<counter;i++)
+        {
+          
+          item=argString[i]
+          for(let i=0;i<commonanimals.length;i++)
+    {
+      if(item==commonanimals[i])
+        {
+          word=true
+          xp+=commonxp
+          earnmoney+=commonmoney
+        }
+    }
+  for(let i=0;i<uncommonanimals.length;i++)
+    {
+      if(item==uncommonanimals[i])
+        {
+          word=true
+          xp+=uncommonxp
+          earnmoney+=uncommonmoney
+        }
+    }
+  for(let i=0;i<rareanimals.length;i++)
+    {
+      if(item==rareanimals[i])
+        {
+          word=true
+          xp+=rarexp
+          earnmoney+=raremoney
+        }
+    }
+  for(let i=0;i<epicanimals.length;i++)
+    {
+      if(item==epicanimals[i])
+        {
+          word=true
+          xp+=epicxp
+          earnmoney+=epicmoney
+        }
+    }
+  for(let i=0;i<legendaryanimals.length;i++)
+    {
+      if(item==legendaryanimals[i])
+        {
+          word=true
+          xp+=legendaryxp
+          earnmoney+=legendarymoney
+        }
+    }
+  let tempcount=0
+  let count=0
+  const arrayToObject = x.reduce((itemStruct, x) => {
+    if(x.name==item)
+      {
+      count=tempcount
+      animal=true
+      }
+    itemStruct[x.name] = (itemStruct[x.name] || 0) + 1;
+    tempcount++
+    return itemStruct;
+  }, {});
+  x.splice(count,1);
+  client.db.set(`animals_${message.author.id}`, x)
+    let amount = Math.floor(Math.random() * 200)+50;
+          console.log(argString[0])
+        }
+      item="All Animals"
+    }
+  else
+  {
   for(let i=0;i<commonanimals.length;i++)
     {
       if(item==commonanimals[i])
@@ -162,8 +249,9 @@ exports.execute = async (client, message, args) => {
   var keyToDelete = '<:cat1:948265025850724372>';
     let amount = Math.floor(Math.random() * 200)+50;
     let amount3 = args[0]
+  }
     client.eco.addMoney(`${message.author.id}12`, parseInt(xp));
-  client.eco.addMoney(message.author.id, parseInt(earnmoney));
+  client.eco.addMoney(message.author.id, parseInt(earnmoney)); 
   message.channel.send(`**The sale was successful!\nSold:${item}\nMoney earned:${earnmoney}\nXP earned:${xp}**`);
   
 }
