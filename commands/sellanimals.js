@@ -248,10 +248,10 @@ exports.execute = async (client, message, args) => {
   }
   
 let userBalanceformat1=String(item).replace(/(.)(?=(\d{3})+$)/g,'$1,')
-let userBalanceformat2=String(userBalance.amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+let userBalanceformat2=String(earnmoney).replace(/(.)(?=(\d{3})+$)/g,'$1,')
     client.eco.addMoney(`${message.author.id}12`, parseInt(xp));
   client.eco.addMoney(message.author.id, parseInt(earnmoney)); 
-  message.channel.send(`**The sale was successful!\nSold:${item}\nMoney earned:${earnmoney}\nXP earned:${xp}**`);
+  message.channel.send(`**The sale was successful!\nSold:${userBalanceformat1}\nMoney earned:${userBalanceformat2}\nXP earned:${xp}**`);
   
 }
 
