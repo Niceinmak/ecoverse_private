@@ -19,10 +19,12 @@ exports.execute = async (client, message, args) => {
 if (!amount || isNaN(amount)) return message.reply("Please specify a valid amount.");
 const Members = guild.members.cache.map(member => member.id); // Getting the members 
   let counter=0
+  console.log(Members)
     for(let i=0;i<anyLength(Members);i++)
       {
         counter++
         client.eco.addMoney(Members[i], parseInt(amount));
+        console.log(Members[i])
       }
     const embed = new MessageEmbed()
         .setTitle(`Money added to ${guild.name} users`)
