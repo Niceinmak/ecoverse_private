@@ -12,7 +12,6 @@ exports.execute = async (client, message, args) => {
         .setTimestamp();
     leaderboard.forEach(u => {
       let moneyformat=String(u.money).replace(/(.)(?=(\d{3})+$)/g,'$1,')
-      console.log(client.users.cache.find(user => user.id === u.id))
         embed.addField(`${u.position}. ${client.users.cache.get(u.id) ? client.users.cache.get(u.id).tag : "Unknown#0000"}`, `**${moneyformat}** 💶`);
     });
     return message.channel.send(embed);

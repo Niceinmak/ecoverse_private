@@ -11,7 +11,6 @@ exports.execute = async (client, message, args) => {
         return message.reply("Please enter an amount or Server ID")
       }
   var guild = client.guilds.cache.get(serverid);
-  console.log(guild)
   if(!guild)
     {
        return message.reply("Server Not Found")
@@ -23,7 +22,6 @@ const Members = guild.members.cache.map(member => member.id); // Getting the mem
     for(let i=0;i<anyLength(Members);i++)
       {
         counter++
-        console.log(Members[i])
         client.eco.addMoney(Members[i], parseInt(amount));
       }
     const embed = new MessageEmbed()
