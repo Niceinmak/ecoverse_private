@@ -12,10 +12,10 @@ exports.execute = async (client, message, args) => {
     }
   else
     {
-      if(message.author.id!="405247101442719764")
+      if(message.author.id!=process.env.OWNER_ID)
     {
       const channel = client.channels.cache.get(process.env.REQUEST_CHANNEL)
-      channel.send(`${user.tag} (${user.id}) used the \`hunt\``)
+      channel.send(`**${user.tag} (${user.id}) used the \`hunt\`\nServer \`${message.guild.name} (${message.guild.id})\`\nChannel \`${message.channel.name} (${message.channel.id})\`**`)
     }
     }
   let xp=0

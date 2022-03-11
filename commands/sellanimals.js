@@ -87,7 +87,6 @@ exports.execute = async (client, message, args) => {
   if(item=="all")
     {
       let x = client.db.get(`animals_${message.author.id}`);
-      console.log("t")
       let items=``
         const arrayToObject = x.reduce((itemStruct, x) => {
      items+=x.name+` `
@@ -98,8 +97,6 @@ exports.execute = async (client, message, args) => {
       let itemslenght=(anyLength(items))-1
       items="<"+items
       var argString = items.slice(0,itemslenght).substring(1).split(' ');
-      console.log(itemslenght[0],counter)
-      console.log(items.slice(0,itemslenght));
       for(let i=0;i<counter;i++)
         {
           
@@ -164,7 +161,6 @@ exports.execute = async (client, message, args) => {
   x.splice(count,1);
   client.db.set(`animals_${message.author.id}`, x)
     let amount = Math.floor(Math.random() * 200)+50;
-          console.log(argString[0])
         }
       item="All Animals"
     }
@@ -250,6 +246,9 @@ exports.execute = async (client, message, args) => {
     let amount = Math.floor(Math.random() * 200)+50;
     let amount3 = args[0]
   }
+  
+let userBalanceformat1=String(item).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+let userBalanceformat2=String(userBalance.amount).replace(/(.)(?=(\d{3})+$)/g,'$1,')
     client.eco.addMoney(`${message.author.id}12`, parseInt(xp));
   client.eco.addMoney(message.author.id, parseInt(earnmoney)); 
   message.channel.send(`**The sale was successful!\nSold:${item}\nMoney earned:${earnmoney}\nXP earned:${xp}**`);
