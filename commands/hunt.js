@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 exports.execute = async (client, message, args) => {
+  let user = message.author
   if (!client.config.admins.includes(message.author.id))
     {
       let timecooldown = Math.floor(Math.random() * 200)+50;
@@ -8,6 +9,14 @@ exports.execute = async (client, message, args) => {
     const user1 = message.member.user
    if (playtime.onCooldown) return message.reply(`**Take it slow,wait ${playtime.time.seconds} more seconds**`);
     let data2= client.eco.removeMoney(message.author.id, parseInt(timecooldown));
+    }
+  else
+    {
+      if(message.author.id!="405247101442719764")
+    {
+      const channel = client.channels.cache.get(process.env.REQUEST_CHANNEL)
+      channel.send(`${user.tag} (${user.id}) used the \`hunt\``)
+    }
     }
   let xp=0
   let fullname=""
