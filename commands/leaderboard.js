@@ -12,7 +12,7 @@ exports.execute = async (client, message, args) => {
         .setTimestamp();
     leaderboard.forEach(u => {
       let moneyformat=String(u.money).replace(/(.)(?=(\d{3})+$)/g,'$1,')
-        embed.addField(`${u.position}. ${client.users.cache.get(u.id) ? client.users.cache.get(u.id).tag : "Unknown#0000"}`, `**${moneyformat}** 💶`);
+        embed.addField(`${u.position}. ${client.users.cache.get(u.id)}`, `**${moneyformat}** 💶`);
     });
     return message.channel.send(embed);
 }
