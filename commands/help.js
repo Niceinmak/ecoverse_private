@@ -86,7 +86,6 @@ exports.execute = async (client, message, args) => {
     ];
   let onlyadminscommands = [
         "botinfo",
-        "addserver",
         "addmoney",
         "removemoney",
         "setmoney",
