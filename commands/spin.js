@@ -59,7 +59,7 @@ exports.execute = async (client, message, args) => {
            {
             if(amount4=="2")
                {
-                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata*3));
+                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata*2));
                  embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning...\n Congratulations, you won!\n Roulette:🔷\n You Played:${userdata2}**`)
                  .setTitle(`**${message.author.tag} |  You Win ${userdata*3}!\n-------------------------------------**`)
                return msg.edit(embed)
@@ -76,7 +76,7 @@ exports.execute = async (client, message, args) => {
            {
                if(amount4=="1")
                {
-                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata)*2);
+                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata));
                  embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning...\n Congratulations, you won!\n Roulette:🔴\n You Played:${userdata2}**`)
                  .setTitle(`**${message.author.tag} |  You Win ${userdata*2}!\n-------------------------------------**`)
                return msg.edit(embed)
@@ -93,7 +93,7 @@ exports.execute = async (client, message, args) => {
            {
              if(amount4=="0")
                {
-                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata*2));
+                    let data2= client.eco.addMoney(message.author.id, parseInt(userdata));
                  embed.setDescription(`**🟢 |Luck 42,5 , Earning:2X\n🔴 |Luck 42,5 , Earning:2X\n🔷 |Luck 15,0 , Earning:3X \n------------------------------------------\n The Wheel is Spinning...\n Congratulations, you won!\n Roulette:🟢\n You Played:${userdata2}**`)
                  .setTitle(`**${message.author.tag} |  You Win ${userdata*2}!\n-------------------------------------**`)
               return msg.edit(embed)
