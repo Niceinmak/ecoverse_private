@@ -36,6 +36,7 @@ exports.execute = async (client, message, args) => {
   let funname=""
   let ecocoincommands = [
         "ecocoin",
+        "transfereco",
         "ecoinv",
         "buyeco",
         "selleco",
