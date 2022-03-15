@@ -9,6 +9,8 @@ const Eco = require("quick.eco");
 client.eco = new Eco.Manager(); // quick.eco
 client.db = Eco.db; // quick.db
 client.config = require("./botConfig");
+const DiscordSlash = require("discord.js-slash-command");
+const slash = new DiscordSlash.Slash(client);
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.shop = {
@@ -141,5 +143,10 @@ fs.readdir("./commands/", (err, files) => {
     });
   });
 });
-
+client.on("ready", () => {
+  let cmd = new DiscordSlash.CommandBuilder();
+cmd.setName("exCmdGuild");
+cmd.setDescription("exCmdGuild Desc");
+slash.create(cmd, "832661859xxxx" /* Guild ID */);
+})
 client.login(process.env.TOKEN);
