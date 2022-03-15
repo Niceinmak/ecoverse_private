@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({ disableMentions: "everyone" });
-const DiscordSlash=require("discord.js-slash-command");
-const slash=new DiscordSlash.Slash(client);
 const btcValue = require('btc-value');
 const DBL = require('dblapi.js');
 const disbut = require("discord-buttons");
