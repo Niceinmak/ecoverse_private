@@ -143,13 +143,4 @@ fs.readdir("./commands/", (err, files) => {
     });
   });
 });
-client.on("ready", () => {
-  let cmd = new DiscordSlash.CommandBuilder();
-cmd.setName("exCmdGuild");
-cmd.setDescription("exCmdGuild Desc");
-slash.create(cmd, "925628280785231872" /* Guild ID */);
-  slash.get(null, "925628280785231872").then((res) => {
-        console.log(res);
-    })
-})
 client.login(process.env.TOKEN);
