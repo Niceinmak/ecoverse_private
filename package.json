@@ -23,6 +23,7 @@
     "dblapi.js": "^2.4.1",
     "discord-buttons": "^4.0.0-deprecated",
     "discord.js": "^12.5.3",
+    "discord.js-slash-command": "^1.2.1",
     "figlet": "^1.5.2",
     "moment": "^2.29.1",
     "ms": "^2.1.3",
