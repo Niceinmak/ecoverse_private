@@ -1,0 +1,15 @@
+npm i discord-buttons
+npm i discord-buttons
+npm i @top-gg/sdk
+npm i dblapi.js2.4.1
+npm i dblapi.js
+npm i ms
+npm i quick.db
+npm i moment
+npm i btc-value
+npm i any-length
+npm i something-random-on-discord
+npm i figlet
+npm list discord.js
+npm i discord.js-slash-command
+npm i discord.js@13.6.0
